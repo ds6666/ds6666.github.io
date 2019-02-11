@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/02/09/5c5e82e30a917.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/09/5c5e836f01340.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/09/5c5e87e559cc5.png">
-<meta property="og:updated_time" content="2019-02-09T12:15:02.729Z">
+<meta property="og:updated_time" content="2019-02-11T04:02:20.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle数据库安装配置">
 <meta name="twitter:description" content="oracle数据库安装配置">
@@ -241,7 +241,7 @@
 <p>这样，我们就可以链接ORCLPDB了。<br>首先，要启动ORCLPDB，先用sys登录到CDB，进行如下操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; alter session set container = ORCLPDB;</span><br><span class="line"></span><br><span class="line">会话已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; STARTUP</span><br></pre></td></tr></table></figure></p>
 <p>这样我们就可以用sys登录到ORCLPDB了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; conn sys@orclpdb/admin  as sysdba</span><br><span class="line">已连接。</span><br></pre></td></tr></table></figure></p>
 <p>我们查一下用没有SCOTT用户：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; select username from dba_users where username like &apos;%SCOTT%&apos;;</span><br><span class="line"></span><br><span class="line">USERNAME</span><br><span class="line">--------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">SCOTT</span><br></pre></td></tr></table></figure></p>
-<p>终于都找到你了！！！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; alter user scott account unlock identified by tiger;</span><br><span class="line"></span><br><span class="line">用户已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; conn scott@pdborcl/tiger</span><br><span class="line">已连接。</span><br><span class="line">SQL&gt; desc emp;</span><br></pre></td></tr></table></figure></p>
+<p>终于都找到你了！！！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; alter user scott account unlock identified by tiger;</span><br><span class="line"></span><br><span class="line">用户已更改。</span><br><span class="line"></span><br><span class="line">SQL&gt; conn scott@orclpdb/tiger</span><br><span class="line">已连接。</span><br><span class="line">SQL&gt; desc emp;</span><br></pre></td></tr></table></figure></p>
 <p>但这个时候又发现还是找不到emp,dept,bonus,salgrade四张表（应该大部分人都是找不到，脑壳痛！），算了也不去找原因了，自己新建了，并填数据进去吧，<a href="https://blog.csdn.net/hekai7217/article/details/81124781" target="_blank" rel="noopener">oracle4张基本表的创建和数据添加</a>注意要在scott用户下建表，然后添加完数据要打一个commit;命令才会上传到数据库，这里面有个坑，jul是七月英文July的缩写，添加数据的时候会报错，添加的时候改成7就好，问题不大。</p>
 <p><img src="https://i.loli.net/2019/02/09/5c5e87e559cc5.png" alt="July"></p>
 <p>到这里oracle 12c/18c 找不到scott用户的问题基本就解决了，但是每次还得先用sys登录CDB,然后启动PDB，这很麻烦，我们可以通过创建触发器的方式来自动启动PDB，触发器代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">CREATE OR REPLACE TRIGGER open_all_pdbs</span><br><span class="line">   AFTER STARTUP</span><br><span class="line">   ON DATABASE</span><br><span class="line">BEGIN</span><br><span class="line">   EXECUTE IMMEDIATE &apos;alter pluggable database all open&apos;;</span><br><span class="line">END open_all_pdbs;</span><br></pre></td></tr></table></figure></p>
@@ -554,19 +554,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,15 +570,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
             
             <div class="clearfix"></div>

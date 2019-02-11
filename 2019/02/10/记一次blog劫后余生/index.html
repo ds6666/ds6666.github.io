@@ -10,21 +10,22 @@
   <title>记一次blog劫后余生 | 韶华尐沐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="记一次blog劫后余生">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次blog劫后余生">
 <meta property="og:url" content="//ds666.fun/2019/02/10/记一次blog劫后余生/index.html">
 <meta property="og:site_name" content="韶华尐沐">
 <meta property="og:description" content="记一次blog劫后余生">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/02/10/5c5f96ba8f116.png">
+<meta property="og:image" content="https://i.loli.net/2019/02/11/5c60f5a09c202.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fa119e9246.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fa15968639.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fa17e39b86.png">
-<meta property="og:updated_time" content="2019-02-10T04:04:25.498Z">
+<meta property="og:updated_time" content="2019-02-11T04:10:38.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次blog劫后余生">
 <meta name="twitter:description" content="记一次blog劫后余生">
-<meta name="twitter:image" content="https://i.loli.net/2019/02/10/5c5f96ba8f116.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/02/11/5c60f5a09c202.png">
   
     <link rel="alternative" href="/atom.xml" title="韶华尐沐" type="application/atom+xml">
   
@@ -214,7 +215,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://i.loli.net/2019/02/10/5c5f96ba8f116.png" alt="美吗"></p>
+        <p><img src="https://i.loli.net/2019/02/11/5c60f5a09c202.png" alt="美吗"></p>
 <h3 id="记一次blog劫后余生"><a href="#记一次blog劫后余生" class="headerlink" title="记一次blog劫后余生"></a>记一次blog劫后余生</h3><a id="more"></a>
 <p>在写上一篇博客的时候，我偶然知道在md文件中可以直接链接本地blog文件夹source的文件，即可以点击蓝色字下载我本地的文件，我就开始膨胀，卡卡传了几个文件，hexo s本地预览时毫无问题（心中暗暗窃喜），然后就hexo d -g要上传部署，可惜被报错了，大体意思就是github限制了上传文件的大小，超过50m的进行警告，而超过100m的则直接会报错，连带这一次的修改更新都部署不上去，gg，我传了一个200多m的wampeserver（具体详见上一篇博客），不让传就不要了吧，我就到source文件夹中备份完文件，删了，为了彻底一些，我还清空了回收站，回来重新hexo d -g部署吧，发现在write object的时候还是在上传那个已经几乎消失了的exe文件，然后同样的报错又一次出现（心态小崩），我到github上查我的仓库，发现更新时间是几天前（我上次部署的时候），也就是文件没传上来，被报错拦截了，我当时也没多想，就开始Google什么hexo 如何清理大于100m文件历史，github大于100m文件解决方案，然后就看是各种尝试，总的来说大概按照三个方向去尝试。</p>
 <p><a href="https://rtyley.github.io/bfg-repo-cleaner/" target="_blank" rel="noopener">BFG</a>，这个应该是目前最为流行的方式，而且我电脑中还有java的运行环境，就开始按照说明操作，他说用什么example.com克隆我存储库到一个裸仓库然后用bfg清除超过100m的二进制历史文件，什么云云的，反正很蒙，就尝试一下吧，第一步就出错了，访问不到example.com，后来又查阅了别的，我好像知道他这个就是example的意思，实际上是你自己库的链接，从库里克隆了一份存到.git文件里，接着进行bfg清除，然后进行下一步，看着跑动起来的代码，我以为我要成功了（心中窃喜），到最后要git push了，卡住不动了，，，我差了重新进行一遍吧，这回push完好像似乎给了一条成功的提示，其实后来我才发现是没有内容要push的提示，我又回去hexo d -g试了一遍，同样报错。gg，这个可能会成功的吧，附上<a href="http://www.cnblogs.com/qmmq/p/4604862.html" target="_blank" rel="noopener">参考文档</a>。</p>
@@ -261,6 +262,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -324,6 +336,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/02/11/php连接oracle数据库配置及操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          php连接oracle数据库配置及操作
+        
+      </div>
+    </a>
   
   
     <a href="/2019/02/09/php-mysql实现注册登录及留言板功能/" id="article-nav-older" class="article-nav-link-wrap">
@@ -509,19 +530,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,15 +546,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
             
             <div class="clearfix"></div>
