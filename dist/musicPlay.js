@@ -29,6 +29,13 @@ const ap = new APlayer({
             cover: 'http://p1.music.126.net/DSTg1dR7yKsyGq4IK3NL8A==/109951163046050093.jpg',
             theme: '#46718b'
         },
+        {
+            name: '某愿片尾曲',
+            artist: '草东没有派对',
+            url: 'http://music.163.com/song/media/outer/url?id=2059638885.mp3',
+            cover: 'http://p1.music.126.net/QMQigidlCS2KYTUOb9I0yg==/109951163879096283.jpg',
+            theme: '#46718b'
+        },
 		{
             name: '起风了',
             artist: '买辣椒也用券',
