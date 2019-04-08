@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/02/11/5c610cb398a6a.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/11/5c610c7620fe3.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/11/5c610d0576b47.png">
-<meta property="og:updated_time" content="2019-02-11T06:08:11.391Z">
+<meta property="og:updated_time" content="2019-04-08T08:58:41.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php连接oracle数据库配置及操作">
 <meta name="twitter:description" content="php连接oracle数据库配置及操作">
@@ -74,6 +74,10 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/project/">项目</a></li>
+	        
+				<li><a href="/resume/">简历</a></li>
 	        
 				<li><a href="/liuyan/">留言板</a></li>
 	        
@@ -133,6 +137,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -152,12 +160,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/liuyan/">留言板</a></li>
+					<li style="width: 25%"><a href="/project/">项目</a></li>
+		        
+					<li style="width: 25%"><a href="/resume/">简历</a></li>
+		        
+					<li style="width: 25%"><a href="/liuyan/">留言板</a></li>
 		        
 				</ul>
 			</nav>
@@ -222,7 +234,7 @@
 <h3 id="php连接oracle数据库配置及操作"><a href="#php连接oracle数据库配置及操作" class="headerlink" title="php连接oracle数据库配置及操作"></a>php连接oracle数据库配置及操作</h3><a id="more"></a>
 <p>1、既然是php连接oracle，首先要确保你电脑中已经安装了wampserver（php集成环境）和oracle数据库，wamp自带mysql及连接，但有的时候你也需要和oracle连接，比如期末大作业。</p>
 <p>安装wampserver详见另一篇博客<a href="http://ds666.fun/2019/02/09/php-mysql%E5%AE%9E%E7%8E%B0%E6%B3%A8%E5%86%8C%E7%99%BB%E5%BD%95%E5%8F%8A%E7%95%99%E8%A8%80%E6%9D%BF%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">php+mysql实现注册登录及留言板功能</a>。</p>
-<p>安装oracle个版本详见另一篇博客<a href="http://ds666.fun/2019/02/09/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" target="_blank" rel="noopener">Oracle数据库安装配置</a>。</p>
+<p>安装oracle个版本详见另一篇博客<a href="http://ds666.fun/project/2019/02/09/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" target="_blank" rel="noopener">Oracle数据库安装配置</a>。</p>
 <p>2、去<a href="http://pecl.php.net/package/oci8" target="_blank" rel="noopener">官网下载PHP扩展包</a>，一般PHP自带扩展的oracle10和oracle11g连接的扩展动态链接库(dll文件)，这里主要介绍12c以及18c（其实用的也是12c的文件）。</p>
 <p>这里注意Description描述内容，找到你php版本相对应oci8版本的文件。<br><img src="https://i.loli.net/2019/02/11/5c6105bf0f88a.png" alt="版"><br><img src="https://i.loli.net/2019/02/11/5c61062f21e01.png" alt="本"><br>点击右下角wamp图标，左键-&gt;PHP-&gt;version，即可以查看PHP版本情况。</p>
 <p>3、下载对应的版本打开压缩包可以看到三组重要的动态链接库文件，php_oci8.dll、php_oci8_11g.dll、php_oci8_12c.dll，分别对应10g，11g，12c/18c的oracle版本，根据你对应的版本选择相对应的dll文件，至于另外的pdb文件据说是另一种更高级的连接方式，还可以连接远程数据库，反正没去做研究，只考虑dll文件即可。<br>首先我们需要找到右下角wamp-&gt;PHP-&gt;php.in文件，然后找到<br><img src="https://i.loli.net/2019/02/11/5c6109fbbef0c.png" alt="php.ini"><br>图中的地方添加extension=php_oci8_12c.dll  ; Use with Oracle 12c Instant Client,封号表示注释，里面可以找到的就直接去掉前面分号，没有的就按照一样格式对应添加进去，需要用什么版本就是把前面的封号去掉。18c版本oracle同样用12c的文件就可以。</p>
@@ -352,11 +364,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/12/php-oracle实现证券系统/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/21/Sublime-Text-3有关插件导入错误及最新版-Build-3200-注册问题/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          php+oracle实现证券系统
+          Sublime Text 3有关插件导入错误及最新版(Build 3200)注册问题
         
       </div>
     </a>
@@ -545,11 +557,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,31 +581,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
