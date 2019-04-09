@@ -7,18 +7,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="//ds666.fun">
-  <title>resume | 韶华尐沐</title>
+  <title>简历 | 韶华尐沐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="resume">
+  <meta name="description" content="点击查看我的简历       *{margin:0;}     canvas{background:transparent;}     body{overflow:hidden;}                var canvas=document.getElementById(&quot;canvas0&quot;);         //获取权限         var ctx=canvas.getConte">
+<meta property="og:type" content="website">
+<meta property="og:title" content="简历">
 <meta property="og:url" content="//ds666.fun/resume/index.html">
 <meta property="og:site_name" content="韶华尐沐">
+<meta property="og:description" content="点击查看我的简历       *{margin:0;}     canvas{background:transparent;}     body{overflow:hidden;}                var canvas=document.getElementById(&quot;canvas0&quot;);         //获取权限         var ctx=canvas.getConte">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://cv.qiaobutang.com/r/5ca44e8ce4b08cb09c9fb0d8">
-<meta property="og:updated_time" content="2019-04-08T08:51:32.217Z">
+<meta property="og:updated_time" content="2019-04-09T06:12:08.135Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="resume">
-<meta name="twitter:image" content="http://cv.qiaobutang.com/r/5ca44e8ce4b08cb09c9fb0d8">
+<meta name="twitter:title" content="简历">
+<meta name="twitter:description" content="点击查看我的简历       *{margin:0;}     canvas{background:transparent;}     body{overflow:hidden;}                var canvas=document.getElementById(&quot;canvas0&quot;);         //获取权限         var ctx=canvas.getConte">
   
     <link rel="alternative" href="/atom.xml" title="韶华尐沐" type="application/atom+xml">
   
@@ -65,7 +66,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/project/">项目</a></li>
+				<li><a href="/categories/项目/">项目</a></li>
 	        
 				<li><a href="/resume/">简历</a></li>
 	        
@@ -155,7 +156,7 @@
 				
 					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/project/">项目</a></li>
+					<li style="width: 25%"><a href="/categories/项目/">项目</a></li>
 		        
 					<li style="width: 25%"><a href="/resume/">简历</a></li>
 		        
@@ -181,7 +182,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      resume
+      简历
     </h1>
   
 
@@ -191,7 +192,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">0字</span>
+        <span class="post-count">103字</span>
       </span>
     </span>
 
@@ -216,7 +217,61 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://cv.qiaobutang.com/r/5ca44e8ce4b08cb09c9fb0d8" alt="简历"></p>
+        
+<center><a href="http://cv.qiaobutang.com/r/5ca44e8ce4b08cb09c9fb0d8" target="_blank" rel="noopener">点击查看我的简历</a></center>
+<style> 
+    *{margin:0;}
+    canvas{background:transparent;}
+    body{overflow:hidden;}
+</style>
+<canvas width="0" height="0" id="canvas0"></canvas>
+    <script>
+        var canvas=document.getElementById("canvas0");
+        //获取权限
+        var ctx=canvas.getContext("2d");
+        //获取屏幕信息
+        var screenInformation= window.screen;
+        //控制台输出屏幕信息
+        console.log(screenInformation);
+        //设置屏幕信息
+        canvas.width=(screenInformation.width/3)*2;
+        canvas.height=screenInformation.height;
+        
+        //字体大小
+        var fontSize=20;
+        //字体
+        var str="01";
+        var cols=Math.floor((screenInformation.width)/fontSize);
+        var X =[];
+        for(var i=0;i<cols;i++){
+            X.push(0);
+        }
+        var gradient=ctx.createLinearGradient(0,0,screenInformation.width,screenInformation.height);
+        gradient.addColorStop("0","#ff0099");
+        gradient.addColorStop("0.25","#00ccff");
+        gradient.addColorStop("0.5","#ffff00");
+        gradient.addColorStop("0.75","#cc66cc");
+        gradient.addColorStop("0.1","#00ccff");
+
+        function matrix(){
+            ctx.fillStyle="rgba(0,0,0,0.06)";
+            
+            //清除画布
+            ctx.fillRect(0,0,canvas.width,canvas.height);
+            //设置字体颜色
+            ctx.fillStyle=gradient;
+            for(var i=0;i<cols;i++){
+                var y=X[i]*fontSize;
+                ctx.fillText(str[Math.floor(Math.random()*str.length)],i*fontSize,y);
+                if(y >= screenInformation.height&&Math.random()>0.99){
+                    X[i]=0;
+                }
+                X[i]++;
+            }
+        }
+        setInterval(matrix,30);
+    </script>
+
 
               
 
@@ -494,19 +549,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,15 +581,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
               </li>
             
             <div class="clearfix"></div>

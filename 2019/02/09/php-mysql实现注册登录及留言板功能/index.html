@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/02/09/5c5ebf3a543c6.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/09/5c5ebfc6c7f45.png">
 <meta property="og:image" content="https://i.loli.net/2019/02/09/5c5ec0bda11a6.png">
-<meta property="og:updated_time" content="2019-02-09T12:40:19.677Z">
+<meta property="og:updated_time" content="2019-04-09T00:49:17.355Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php+mysql实现注册登录及留言板功能">
 <meta name="twitter:description" content="php+mysql实现注册登录及留言板功能">
@@ -74,6 +74,10 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/categories/项目/">项目</a></li>
+	        
+				<li><a href="/resume/">简历</a></li>
 	        
 				<li><a href="/liuyan/">留言板</a></li>
 	        
@@ -133,6 +137,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -152,12 +160,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/liuyan/">留言板</a></li>
+					<li style="width: 25%"><a href="/categories/项目/">项目</a></li>
+		        
+					<li style="width: 25%"><a href="/resume/">简历</a></li>
+		        
+					<li style="width: 25%"><a href="/liuyan/">留言板</a></li>
 		        
 				</ul>
 			</nav>
@@ -189,7 +201,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">561字</span>
+        <span class="post-count">550字</span>
       </span>
     </span>
 
@@ -220,7 +232,7 @@
       
         <p><img src="https://i.loli.net/2019/02/09/5c5eae020033f.png" alt="配图"> </p>
 <h3 id="php-mysql实现注册登录及留言板功能"><a href="#php-mysql实现注册登录及留言板功能" class="headerlink" title="php+mysql实现注册登录及留言板功能"></a>php+mysql实现注册登录及留言板功能</h3><a id="more"></a>
-<p>首先我们需要一个工具<a href="https://baike.baidu.com/item/WampServer" target="_blank" rel="noopener">WampServer</a>,<a href="http://www.wampserver.com/en/" target="_blank" rel="noopener">WampServer官网</a>访问不了很久了，估计是凉了，现在要下载只能是在<a href="https://sourceforge.net/" target="_blank" rel="noopener">sourceforge</a>上了，<a href="https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/" target="_blank" rel="noopener">wampserver下载</a>，但由于是外网，所以不好访问，下载速度也慢，我已经给你们提前下好了，本来要直接上链接的，但是github限制文件大小为100m，所以改百度云分享吧，<a href="https://pan.baidu.com/s/1o6xj6tDasbV1mf3jihTDRw" target="_blank" rel="noopener">点击下载</a>，密码：ufdt。按部就班安装，基本无脑接受，下一步就行。然后右下角会出现图标，并且呈现绿色，所有服务正常运行。右键图标Language—Chinese，改为中文。</p>
+<p>首先我们需要一个工具<a href="https://baike.baidu.com/item/WampServer" target="_blank" rel="noopener">WampServer</a>,<a href="http://www.wampserver.com/en/" target="_blank" rel="noopener">WampServer官网</a>经常访问不了，可以在<a href="https://sourceforge.net/" target="_blank" rel="noopener">sourceforge</a>上下载，<a href="https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/" target="_blank" rel="noopener">wampserver下载</a>，但由于是外网，所以不好访问，下载速度也慢，我已经给你们提前下好了，本来要直接上链接的，但是github限制文件大小为100m，所以改百度云分享吧，<a href="https://pan.baidu.com/s/1o6xj6tDasbV1mf3jihTDRw" target="_blank" rel="noopener">点击下载</a>，密码：ufdt。按部就班安装，基本无脑接受，下一步就行。然后右下角会出现图标，并且呈现绿色，所有服务正常运行。右键图标Language—Chinese，改为中文。</p>
 <p><img src="https://i.loli.net/2019/02/09/5c5eb2203b6cb.png" alt="wampserver"></p>
 <p>打开浏览器，地址栏输入localhost回车，出现wampserver信息界面，localhost/路径即为wamp64\www文件夹下的文件，编辑好后直接在网址栏运行，例如localhost/4/index.php即为运行www文件夹下4文件夹中的index.php文件。</p>
 <p><img src="https://i.loli.net/2019/02/09/5c5eb95a89990.png" alt="wamp"></p>
@@ -285,6 +297,17 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/项目//" class="article-tag-list-link color3">项目</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -545,15 +568,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,6 +585,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,15 +608,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
               </li>
             
             <div class="clearfix"></div>
