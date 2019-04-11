@@ -7,25 +7,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.ds666.fun">
-  <title>记一次blog劫后余生 | 韶华尐沐</title>
+  <title>Python实现查找重复名称文件-md5实现查找重复内容文件 | 韶华尐沐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记一次blog劫后余生">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="Python实现查找重复名称文件-md5实现查找重复内容文件">
+<meta name="keywords" content="python,脚本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记一次blog劫后余生">
-<meta property="og:url" content="http://www.ds666.fun/2019/02/10/记一次blog劫后余生/index.html">
+<meta property="og:title" content="Python实现查找重复名称文件-md5实现查找重复内容文件">
+<meta property="og:url" content="http://www.ds666.fun/2019/04/11/Python实现查找重复名称文件-md5实现查找重复内容文件/index.html">
 <meta property="og:site_name" content="韶华尐沐">
-<meta property="og:description" content="记一次blog劫后余生">
+<meta property="og:description" content="Python实现查找重复名称文件-md5实现查找重复内容文件">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/02/11/5c60f5a09c202.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fa119e9246.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fa15968639.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fa17e39b86.png">
-<meta property="og:updated_time" content="2019-02-11T04:10:38.583Z">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caf043ae4dff.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caf0b6ca2169.png">
+<meta property="og:updated_time" content="2019-04-11T10:00:49.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记一次blog劫后余生">
-<meta name="twitter:description" content="记一次blog劫后余生">
-<meta name="twitter:image" content="https://i.loli.net/2019/02/11/5c60f5a09c202.png">
+<meta name="twitter:title" content="Python实现查找重复名称文件-md5实现查找重复内容文件">
+<meta name="twitter:description" content="Python实现查找重复名称文件-md5实现查找重复内容文件">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/11/5caf043ae4dff.png">
   
     <link rel="alternative" href="/atom.xml" title="韶华尐沐" type="application/atom+xml">
   
@@ -181,14 +179,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-记一次blog劫后余生" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-Python实现查找重复名称文件-md5实现查找重复内容文件" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      记一次blog劫后余生
+      Python实现查找重复名称文件-md5实现查找重复内容文件
     </h1>
   
 
@@ -198,7 +196,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">893字</span>
+        <span class="post-count">749字</span>
       </span>
     </span>
 
@@ -219,22 +217,21 @@
 </div>
         
         
-        <a href="/2019/02/10/记一次blog劫后余生/" class="archive-article-date">
-  	<time datetime="2019-02-10T03:08:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-10</time>
+        <a href="/2019/04/11/Python实现查找重复名称文件-md5实现查找重复内容文件/" class="archive-article-date">
+  	<time datetime="2019-04-11T08:58:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://i.loli.net/2019/02/11/5c60f5a09c202.png" alt="美吗"></p>
-<h3 id="记一次blog劫后余生"><a href="#记一次blog劫后余生" class="headerlink" title="记一次blog劫后余生"></a>记一次blog劫后余生</h3><a id="more"></a>
-<p>在写上一篇博客的时候，我偶然知道在md文件中可以直接链接本地blog文件夹source的文件，即可以点击蓝色字下载我本地的文件，我就开始膨胀，卡卡传了几个文件，hexo s本地预览时毫无问题（心中暗暗窃喜），然后就hexo d -g要上传部署，可惜被报错了，大体意思就是github限制了上传文件的大小，超过50m的进行警告，而超过100m的则直接会报错，连带这一次的修改更新都部署不上去，gg，我传了一个200多m的wampeserver（具体详见上一篇博客），不让传就不要了吧，我就到source文件夹中备份完文件，删了，为了彻底一些，我还清空了回收站，回来重新hexo d -g部署吧，发现在write object的时候还是在上传那个已经几乎消失了的exe文件，然后同样的报错又一次出现（心态小崩），我到github上查我的仓库，发现更新时间是几天前（我上次部署的时候），也就是文件没传上来，被报错拦截了，我当时也没多想，就开始Google什么hexo 如何清理大于100m文件历史，github大于100m文件解决方案，然后就看是各种尝试，总的来说大概按照三个方向去尝试。</p>
-<p><a href="https://rtyley.github.io/bfg-repo-cleaner/" target="_blank" rel="noopener">BFG</a>，这个应该是目前最为流行的方式，而且我电脑中还有java的运行环境，就开始按照说明操作，他说用什么example.com克隆我存储库到一个裸仓库然后用bfg清除超过100m的二进制历史文件，什么云云的，反正很蒙，就尝试一下吧，第一步就出错了，访问不到example.com，后来又查阅了别的，我好像知道他这个就是example的意思，实际上是你自己库的链接，从库里克隆了一份存到.git文件里，接着进行bfg清除，然后进行下一步，看着跑动起来的代码，我以为我要成功了（心中窃喜），到最后要git push了，卡住不动了，，，我差了重新进行一遍吧，这回push完好像似乎给了一条成功的提示，其实后来我才发现是没有内容要push的提示，我又回去hexo d -g试了一遍，同样报错。gg，这个可能会成功的吧，附上<a href="http://www.cnblogs.com/qmmq/p/4604862.html" target="_blank" rel="noopener">参考文档</a>。</p>
-<p><a href="https://git-lfs.github.com/" target="_blank" rel="noopener">LFS</a>，大概意思是把大文件转换成一个指针索引存到github库中，源文件放到别的地方，然后调用的时候在转换，具体操作可以参见<a href="https://blog.csdn.net/qianghaohao/article/details/79115108" target="_blank" rel="noopener">使用LFS解决GitHub无法上传大文件问题</a>，其实我陷入了一个误区，我文件都没传过去，实在历史记录中被记忆拦截，谈何lfs转换，反正当时就病急乱投医，也试了一手，失败告终。</p>
-<p><a href="https://help.github.com/enterprise/11.10.340/user/articles/working-with-large-files/" target="_blank" rel="noopener">官方解决方案</a>，又瞎试了各种乱七八糟的命令什么的，经历各种报错，查报错，查不到，反正就开始跟它耗起来了！</p>
-<p><img src="https://i.loli.net/2019/02/10/5c5fa119e9246.png" alt="干"><br><img src="https://i.loli.net/2019/02/10/5c5fa15968639.png" alt="耗"><br><img src="https://i.loli.net/2019/02/10/5c5fa17e39b86.png" alt="着"></p>
-<p>直到今天上午，在我心态大崩即将要重建blog的时候，我终于找到了<a href="https://shevonwang.github.io/2016/10/23/hexo%E5%88%A0%E9%99%A4git-commit%E5%8E%86%E5%8F%B2/" target="_blank" rel="noopener">解决办法</a>，<br>既然是在历史记录里卡着不给过，那就清除全部历史记录，重新部署，将.deply_git文件备份，以免意外情况发生，删除 .deploy_git 和 public 文件，重新部署，果然成功了，感谢cctv，感谢<br>mtv，&amp;*!@#$%^+=-/。</p>
+        <p><img src="https://i.loli.net/2019/04/11/5caf043ae4dff.png" alt="黑洞"> </p>
+<h3 id="Python实现查找重复名称文件-md5实现查找重复内容文件"><a href="#Python实现查找重复名称文件-md5实现查找重复内容文件" class="headerlink" title="Python实现查找重复名称文件-md5实现查找重复内容文件"></a>Python实现查找重复名称文件-md5实现查找重复内容文件</h3><a id="more"></a>
+<p>相信很多人都有这个烦恼，文件夹中存在大量的文件，子文件夹中又有一些文件，有很多重名了，有很多虽然名字不一样，但内容确实一摸一样，这样就占用了大量的空间，挨个去找却又即为耗时耗力。这里我就介绍一个基于Python以及hashlib模块下的md5来找出这些重复文件并自动删除。</p>
+<p><a href="https://baike.baidu.com/item/MD5/212708?fr=aladdin" target="_blank" rel="noopener">md5</a>就是一种加密方式，用于确保信息传输完整一致，Python的<a href="https://docs.python.org/2/library/md5.html" target="_blank" rel="noopener">md5官方文档</a>详细介绍了其使用方法，请自行查阅。<br>1、代码解析<br>1)查找文件名相同的文件，并输出其文件名，大小，路径，创建时间<br>首先建立一个空的file_l列表用于存放每个文件。<br>然后用os.walk方法遍历路径，以及其子目录，获取文件。判断如果文件名没在file_l列表中则append，若是已经存在，就输出重名文件名，大小，路径，创建时间。</p>
+<p>2)查找文件内容相同的文件，并索引其位置，删除掉。<br>首先类似的新建一个空的字典dup用于存放每个文件的md5值和对应的文件（列表形式），分别作为key，value。<br>同样用os.walk方法遍历路径，以及其子目录，获取文件，并同时获取其md5值，如果对应文件的md5值没有重复的，就以此md5为k，并将文件加到value列表中，如果遍历到与其相同的md5值，则输出提示/删除掉此文件，这里采用输出提示，并append到对应的value列表中。</p>
+<p>2、案例测试<br>我在test文件夹下分别新建1.txt，2.txt，3.txt并依次存入123，456，789，接着又分别新建t1文件夹下新建1.txt，存入123，t2、t3同理。<br>然后输入路径test运行结果如下：<br><img src="https://i.loli.net/2019/04/11/5caf0b6ca2169.png" alt="结果"><br>最后附上源代码：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">file_l=[]</span><br><span class="line">dup = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findsame</span><span class="params">(path)</span>:</span></span><br><span class="line">    pwd=os.getcwd()</span><br><span class="line">    <span class="keyword">for</span> root,dirs,files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">        os.chdir(path)</span><br><span class="line">        <span class="keyword">for</span> each_file <span class="keyword">in</span> files:</span><br><span class="line">            <span class="comment">#判断相同内容文件</span></span><br><span class="line">            hash = md5sum(each_file)</span><br><span class="line">            <span class="keyword">if</span> hash <span class="keyword">not</span> <span class="keyword">in</span> dup.keys():</span><br><span class="line">                dup[hash] = [each_file]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                print(<span class="string">"在%s中发现重复内容文件%s"</span>%(root,each_file))</span><br><span class="line">                dup[hash].append(each_file)</span><br><span class="line">                <span class="comment"># os.remove(each_file)</span></span><br><span class="line">            <span class="comment">#判断相同文件名文件</span></span><br><span class="line">            <span class="keyword">if</span> each_file <span class="keyword">in</span> file_l:</span><br><span class="line">                md5sum(each_file)</span><br><span class="line">                print(<span class="string">'%s存在重名文件'</span>%each_file)</span><br><span class="line">                print(<span class="string">'文件大小：%s'</span>%os.path.getsize(each_file))</span><br><span class="line">                print(<span class="string">"创建时间: %s"</span> % time.ctime(os.path.getctime(each_file)))</span><br><span class="line">                print(<span class="string">'位置是：%s'</span>%root)</span><br><span class="line">            file_l.append(each_file)</span><br><span class="line">        os.chdir(pwd)</span><br><span class="line">    <span class="comment">#提示存在相同内容文件的第一个遍历到的文件</span></span><br><span class="line">    <span class="keyword">for</span> k, v <span class="keyword">in</span> dup.items():</span><br><span class="line">        <span class="keyword">if</span> len(v) &gt; <span class="number">1</span>:</span><br><span class="line">            print(<span class="string">'%s存在相同内容文件'</span> % v[<span class="number">0</span>])</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename, blocksize=<span class="number">500</span>)</span>:</span></span><br><span class="line">    hash = hashlib.md5()</span><br><span class="line">    <span class="keyword">with</span> open(filename, <span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> block <span class="keyword">in</span> iter(<span class="keyword">lambda</span>: f.read(blocksize), <span class="string">b""</span>):</span><br><span class="line">            hash.update(block)</span><br><span class="line">    <span class="keyword">return</span> hash.hexdigest()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    findsame(<span class="string">'test'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>更改其中的路径参数即可判断对应路径下的同名文件及相同内容文件。</p>
 
               
 
@@ -279,13 +276,28 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">脚本</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/项目//" class="article-tag-list-link color3">项目</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -335,7 +347,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.ds666.fun/2019/02/10/记一次blog劫后余生/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.ds666.fun/2019/04/11/Python实现查找重复名称文件-md5实现查找重复内容文件/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -349,18 +361,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/11/php连接oracle数据库配置及操作/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          php连接oracle数据库配置及操作
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/02/09/php-mysql实现注册登录及留言板功能/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">php+mysql实现注册登录及留言板功能</div>
+    <a href="/2019/04/11/k-近邻算法实战之sklearn手写数字识别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">k-近邻算法实战之sklearn手写数字识别</div>
       <i class="icon-circle-right"></i>
     </a>
   

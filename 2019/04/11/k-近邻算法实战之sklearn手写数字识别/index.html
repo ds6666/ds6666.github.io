@@ -7,25 +7,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.ds666.fun">
-  <title>记一次blog劫后余生 | 韶华尐沐</title>
+  <title>k-近邻算法实战之sklearn手写数字识别 | 韶华尐沐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记一次blog劫后余生">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="k-近邻算法实战之sklearn手写数字识别">
+<meta name="keywords" content="python,机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记一次blog劫后余生">
-<meta property="og:url" content="http://www.ds666.fun/2019/02/10/记一次blog劫后余生/index.html">
+<meta property="og:title" content="k-近邻算法实战之sklearn手写数字识别">
+<meta property="og:url" content="http://www.ds666.fun/2019/04/11/k-近邻算法实战之sklearn手写数字识别/index.html">
 <meta property="og:site_name" content="韶华尐沐">
-<meta property="og:description" content="记一次blog劫后余生">
+<meta property="og:description" content="k-近邻算法实战之sklearn手写数字识别">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/02/11/5c60f5a09c202.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fa119e9246.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fa15968639.png">
-<meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fa17e39b86.png">
-<meta property="og:updated_time" content="2019-02-11T04:10:38.583Z">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5cae958bedb0c.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caee4f22e29a.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caee6366b5be.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caee6ed15be0.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caee79ebf63f.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caef3b7ed7e2.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caef25fd888f.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caef44699026.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caef47fbb07f.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/11/5caf10198b389.png">
+<meta property="og:updated_time" content="2019-04-11T10:00:46.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记一次blog劫后余生">
-<meta name="twitter:description" content="记一次blog劫后余生">
-<meta name="twitter:image" content="https://i.loli.net/2019/02/11/5c60f5a09c202.png">
+<meta name="twitter:title" content="k-近邻算法实战之sklearn手写数字识别">
+<meta name="twitter:description" content="k-近邻算法实战之sklearn手写数字识别">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/11/5cae958bedb0c.png">
   
     <link rel="alternative" href="/atom.xml" title="韶华尐沐" type="application/atom+xml">
   
@@ -181,14 +187,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-记一次blog劫后余生" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-k-近邻算法实战之sklearn手写数字识别" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      记一次blog劫后余生
+      k-近邻算法实战之sklearn手写数字识别
     </h1>
   
 
@@ -198,7 +204,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">893字</span>
+        <span class="post-count">3k字</span>
       </span>
     </span>
 
@@ -207,7 +213,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">3分</span>
+        <span class="post-count">10分</span>
       </span>
     </span>
 
@@ -219,22 +225,25 @@
 </div>
         
         
-        <a href="/2019/02/10/记一次blog劫后余生/" class="archive-article-date">
-  	<time datetime="2019-02-10T03:08:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-10</time>
+        <a href="/2019/04/11/k-近邻算法实战之sklearn手写数字识别/" class="archive-article-date">
+  	<time datetime="2019-04-11T01:11:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://i.loli.net/2019/02/11/5c60f5a09c202.png" alt="美吗"></p>
-<h3 id="记一次blog劫后余生"><a href="#记一次blog劫后余生" class="headerlink" title="记一次blog劫后余生"></a>记一次blog劫后余生</h3><a id="more"></a>
-<p>在写上一篇博客的时候，我偶然知道在md文件中可以直接链接本地blog文件夹source的文件，即可以点击蓝色字下载我本地的文件，我就开始膨胀，卡卡传了几个文件，hexo s本地预览时毫无问题（心中暗暗窃喜），然后就hexo d -g要上传部署，可惜被报错了，大体意思就是github限制了上传文件的大小，超过50m的进行警告，而超过100m的则直接会报错，连带这一次的修改更新都部署不上去，gg，我传了一个200多m的wampeserver（具体详见上一篇博客），不让传就不要了吧，我就到source文件夹中备份完文件，删了，为了彻底一些，我还清空了回收站，回来重新hexo d -g部署吧，发现在write object的时候还是在上传那个已经几乎消失了的exe文件，然后同样的报错又一次出现（心态小崩），我到github上查我的仓库，发现更新时间是几天前（我上次部署的时候），也就是文件没传上来，被报错拦截了，我当时也没多想，就开始Google什么hexo 如何清理大于100m文件历史，github大于100m文件解决方案，然后就看是各种尝试，总的来说大概按照三个方向去尝试。</p>
-<p><a href="https://rtyley.github.io/bfg-repo-cleaner/" target="_blank" rel="noopener">BFG</a>，这个应该是目前最为流行的方式，而且我电脑中还有java的运行环境，就开始按照说明操作，他说用什么example.com克隆我存储库到一个裸仓库然后用bfg清除超过100m的二进制历史文件，什么云云的，反正很蒙，就尝试一下吧，第一步就出错了，访问不到example.com，后来又查阅了别的，我好像知道他这个就是example的意思，实际上是你自己库的链接，从库里克隆了一份存到.git文件里，接着进行bfg清除，然后进行下一步，看着跑动起来的代码，我以为我要成功了（心中窃喜），到最后要git push了，卡住不动了，，，我差了重新进行一遍吧，这回push完好像似乎给了一条成功的提示，其实后来我才发现是没有内容要push的提示，我又回去hexo d -g试了一遍，同样报错。gg，这个可能会成功的吧，附上<a href="http://www.cnblogs.com/qmmq/p/4604862.html" target="_blank" rel="noopener">参考文档</a>。</p>
-<p><a href="https://git-lfs.github.com/" target="_blank" rel="noopener">LFS</a>，大概意思是把大文件转换成一个指针索引存到github库中，源文件放到别的地方，然后调用的时候在转换，具体操作可以参见<a href="https://blog.csdn.net/qianghaohao/article/details/79115108" target="_blank" rel="noopener">使用LFS解决GitHub无法上传大文件问题</a>，其实我陷入了一个误区，我文件都没传过去，实在历史记录中被记忆拦截，谈何lfs转换，反正当时就病急乱投医，也试了一手，失败告终。</p>
-<p><a href="https://help.github.com/enterprise/11.10.340/user/articles/working-with-large-files/" target="_blank" rel="noopener">官方解决方案</a>，又瞎试了各种乱七八糟的命令什么的，经历各种报错，查报错，查不到，反正就开始跟它耗起来了！</p>
-<p><img src="https://i.loli.net/2019/02/10/5c5fa119e9246.png" alt="干"><br><img src="https://i.loli.net/2019/02/10/5c5fa15968639.png" alt="耗"><br><img src="https://i.loli.net/2019/02/10/5c5fa17e39b86.png" alt="着"></p>
-<p>直到今天上午，在我心态大崩即将要重建blog的时候，我终于找到了<a href="https://shevonwang.github.io/2016/10/23/hexo%E5%88%A0%E9%99%A4git-commit%E5%8E%86%E5%8F%B2/" target="_blank" rel="noopener">解决办法</a>，<br>既然是在历史记录里卡着不给过，那就清除全部历史记录，重新部署，将.deply_git文件备份，以免意外情况发生，删除 .deploy_git 和 public 文件，重新部署，果然成功了，感谢cctv，感谢<br>mtv，&amp;*!@#$%^+=-/。</p>
+        <p><img src="https://i.loli.net/2019/04/11/5cae958bedb0c.png" alt="黑洞"> </p>
+<h3 id="k-近邻算法实战之sklearn手写数字识别"><a href="#k-近邻算法实战之sklearn手写数字识别" class="headerlink" title="k-近邻算法实战之sklearn手写数字识别"></a>k-近邻算法实战之sklearn手写数字识别</h3><a id="more"></a>
+<p>1、k近邻法(k-nearest neighbor, k-NN)是1967年由Cover T和Hart P提出的一种基本分类与回归方法。它的工作原理是：存在一个样本数据集合，也称作为训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一个数据与所属分类的对应关系。输入没有标签的新数据后，将新的数据的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本最相似数据(最近邻)的分类标签。一般来说，我们只选择样本数据集中前k个最相似的数据，这就是k-近邻算法中k的出处，通常k是不大于20的整数。最后，选择k个最相似数据中出现次数最多的分类，作为新数据的分类。<br><img src="https://i.loli.net/2019/04/11/5caee4f22e29a.png" alt="KNN"><br>(1)该算法的思想是： 一个样本与数据集中的k个样本最相似，如果这k个样本中的大多数属于某一个类别，则该样本也属于这个类别。</p>
+<p>(2)距离度量：我们以下图为例，横坐标为打斗镜头，纵坐标为接吻镜头<br><img src="https://i.loli.net/2019/04/11/5caee6366b5be.png" alt="电影分类"><br>我们可以从散点图大致推断，这个红色圆点标记的电影可能属于动作片，因为距离已知的那两个动作片的圆点更近。k-近邻算法用什么方法进行判断呢？没错，就是距离度量。这个电影分类的例子有2个特征，也就是在2维实数向量空间，可以使用我们高中学过的两点距离公式计算距离。<br><img src="https://i.loli.net/2019/04/11/5caee6ed15be0.png" alt="两点间距离公式"><br>电影例子中的特征是2维的，这样的距离度量可以用两点距离公式计算，但是如果是更高维的呢？对，没错。我们可以用欧氏距离(也称欧几里德度量)，如图所示。我们高中所学的两点距离公式就是欧氏距离在二维空间上的公式，也就是欧氏距离的n的值为2的情况。<br><img src="https://i.loli.net/2019/04/11/5caee79ebf63f.png" alt="欧氏距离公式"></p>
+<p>(3)k值选择：<br>通过计算，我们可以得到如下结果：<br>(101,20)-&gt;动作片(108,5)的距离约为16.55<br>(101,20)-&gt;动作片(115,8)的距离约为18.44<br>(101,20)-&gt;爱情片(5,89)的距离约为118.22<br>(101,20)-&gt;爱情片(1,101)的距离约为128.69<br>    红色圆点标记的电影到动作片 (108,5)的距离最近，为16.55。如果算法直接根据这个结果，判断该红色圆点标记的电影为动作片，这个算法就是最近邻算法，而非k-近邻算法。那么k-邻近算法是什么呢？k-近邻算法步骤如下：<br>1)计算已知类别数据集中的点与当前点之间的距离；<br>2)按照距离递增次序排序；<br>3)选取与当前点距离最小的k个点；<br>4)确定前k个点所在类别的出现频率；<br>5)返回前k个点所出现频率最高的类别作为当前点的预测分类。<br>比如，现在我这个k值取3，那么在电影例子中，按距离依次排序的三个点分别是动作片(108,5)、动作片(115,8)、爱情片(5,89)。在这三个点中，动作片出现的频率为三分之二，爱情片出现的频率为三分之一，所以该红色圆点标记的电影为动作片。这个判别过程就是k-近邻算法。<br>那么对于其他情况来说k值又该如何选择呢？<br>如果选择较小的K值，就相当于用较小的邻域中的训练实例进行预测，学习的近似误差会减小，只有与输入实例较近的训练实例才会对预测结果起作用，单缺点是学习的估计误差会增大，预测结果会对近邻的实例点分成敏感。如果邻近的实例点恰巧是噪声，预测就会出错。换句话说，K值减小就意味着整体模型变复杂，分的不清楚，就容易发生过拟合。<br>如果选择较大K值，就相当于用较大邻域中的训练实例进行预测，其优点是可以减少学习的估计误差，但近似误差会增大，也就是对输入实例预测不准确，K值得增大就意味着整体模型变的简单</p>
+<p>近似误差：可以理解为对现有训练集的训练误差。<br>估计误差：可以理解为对测试集的测试误差。</p>
+<p>近似误差关注训练集，如果k值小了会出现过拟合的现象，对现有的训练集能有很好的预测，但是对未知的测试样本将会出现较大偏差的预测。模型本身不是最接近最佳模型。<br>估计误差关注测试集，估计误差小了说明对未知数据的预测能力好。模型本身最接近最佳模型。<br>在应用中，K值一般取一个比较小的数值，通常采用交叉验证法来选取最优的K值。</p>
+<p>(4)K-近邻的优缺点<br>KNN算法的优点：<br>1）简单、有效。<br>2）重新训练的代价较低（类别体系的变化和训练集的变化，在Web环境和电子商务应用中是很常见的）。<br>3）计算时间和空间线性于训练集的规模（在一些场合不算太大）。<br>4）由于KNN方法主要靠周围有限的邻近的样本，而不是靠判别类域的方法来确定所属类别的，因此对于类域的交叉或重叠较多的待分样本集来说，KNN方法较其他方法更为适合。<br>5）该算法比较适用于样本容量比较大的类域的自动分类，而那些样本容量较小的类域采用这种算法比较容易产生误分。<br>KNN算法缺点：<br>1）KNN算法是懒散学习方法（lazy learning,基本上不学习），一些积极学习的算法要快很多。<br>2）类别评分不是规格化的（不像概率评分）。<br>3）输出的可解释性不强，例如决策树的可解释性较强。<br>4）该算法在分类时有个主要的不足是，当样本不平衡时，如一个类的样本容量很大，而其他类样本容量很小时，有可能导致当输入一个新样本时，该样本的K个邻居中大容量类的样本占多数。该算法只计算“最近的”邻居样本，某一类的样本数量很大，那么或者这类样本并不接近目标样本，或者这类样本很靠近目标样本。无论怎样，数量并不能影响运行结果。可以采用权值的方法（和该样本距离小的邻居权值大）来改进。<br>5）计算量较大。目前常用的解决方法是事先对已知样本点进行剪辑，事先去除对分类作用不大的样本。</p>
+<p>2、k近邻算法的代码实现：<br>(1)手动编写函数实现<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify0</span><span class="params">(inX, dataSet, labels, k)</span>:</span></span><br><span class="line">    <span class="comment">#numpy函数shape[0]返回dataSet的行数</span></span><br><span class="line">    dataSetSize = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment">#在列向量方向上重复inX共1次(横向)，行向量方向上重复inX共dataSetSize次(纵向)</span></span><br><span class="line">    diffMat = np.tile(inX, (dataSetSize, <span class="number">1</span>)) - dataSet</span><br><span class="line">    <span class="comment">#二维特征相减后平方</span></span><br><span class="line">    sqDiffMat = diffMat**<span class="number">2</span></span><br><span class="line">    <span class="comment">#sum()所有元素相加，sum(0)列相加，sum(1)行相加</span></span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=<span class="number">1</span>)</span><br><span class="line">    <span class="comment">#开方，计算出距离</span></span><br><span class="line">    distances = sqDistances**<span class="number">0.5</span></span><br><span class="line">    <span class="comment">#返回distances中元素从小到大排序后的索引值</span></span><br><span class="line">    sortedDistIndices = distances.argsort()</span><br><span class="line">    <span class="comment">#定一个记录类别次数的字典</span></span><br><span class="line">    classCount = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        <span class="comment">#取出前k个元素的类别</span></span><br><span class="line">        voteIlabel = labels[sortedDistIndices[i]]</span><br><span class="line">        <span class="comment">#dict.get(key,default=None),字典的get()方法,返回指定键的值,如果值不在字典中返回默认值。</span></span><br><span class="line">        <span class="comment">#计算类别次数</span></span><br><span class="line">        classCount[voteIlabel] = classCount.get(voteIlabel,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">    <span class="comment">#python3中用items()替换python2中的iteritems()</span></span><br><span class="line">    <span class="comment">#key=operator.itemgetter(1)根据字典的值进行排序</span></span><br><span class="line">    <span class="comment">#key=operator.itemgetter(0)根据字典的键进行排序</span></span><br><span class="line">    <span class="comment">#reverse降序排序字典</span></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="comment">#返回次数最多的类别,即所要分类的类别</span></span><br><span class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify1</span><span class="params">(inx, dataset, labels, k)</span>:</span></span><br><span class="line">    <span class="comment"># 计算距离</span></span><br><span class="line">    dist = np.sum((inx - dataset)**<span class="number">2</span>, axis=<span class="number">1</span>)**<span class="number">0.5</span></span><br><span class="line">    <span class="comment"># k个最近的标签</span></span><br><span class="line">    k_labels = [labels[index] <span class="keyword">for</span> index <span class="keyword">in</span> dist.argsort()[<span class="number">0</span> : k]]</span><br><span class="line">    <span class="comment"># 出现次数最多的标签即为最终类别</span></span><br><span class="line">    label = collections.Counter(k_labels).most_common(<span class="number">1</span>)[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> label</span><br></pre></td></tr></table></figure></p>
+<p>classify0为具体写法，一步步进行，classify1为简化写法，毕竟用python怎么能不体现出其精简的优势，同样的代码，python因为其简化写法，进行行数缩减，增加开发效率。在本文的最后给出电影案例的源程序，文件为test0.py<br>(2)k-近邻算法实战之sklearn手写数字识别(sklearn模块实现)<br>1)Sklearn简介<br>  Scikit learn 也简称sklearn，是机器学习领域当中最知名的python模块之一。sklearn包含了很多机器学习的方式：<br>Classification 分类<br>Regression 回归<br>Clustering 非监督分类<br>Dimensionality reduction 数据降维<br>Model Selection 模型选择<br>Preprocessing 数据与处理<br>  使用sklearn可以很方便地让我们实现一个机器学习算法。一个复杂度算法的实现，使用sklearn可能只需要调用几行API即可。所以学习sklearn，可以有效减少我们特定任务的实现周期。<br>2)安装<br>参见<a href="https://blog.csdn.net/dlh_sycamore/article/details/79584039" target="_blank" rel="noopener">python安装sklearn模块</a>，里面介绍是先安装几个库，然后再pip install，如果你用的是pycharm，可以直接在settings-&gt;project xx-&gt;Project Interpreter，点击右侧+来进行搜索安装，或者你是用Anaconda安装的python可以用对应的conda命令来安装模块。<br>3)案例及使用<br><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html" target="_blank" rel="noopener">官网英文文档</a><br>sklearn.neighbors模块实现了k-近邻算法，参数如下<br><img src="https://i.loli.net/2019/04/11/5caef3b7ed7e2.png" alt="参数"><br><img src="https://i.loli.net/2019/04/11/5caef25fd888f.png" alt="权重"><br>要注意数据集的权重对预测结果的影响，像图中的Y，明显属于红点区域，但却因为蓝色三角形区域所占数量更多，会被判为蓝色三角区域类型。</p>
+<p>对于需要识别的数字已经使用图形处理软件，处理成具有相同的色彩和大小：宽高是32像素x32像素。尽管采用本文格式存储图像不能有效地利用内存空间，但是为了方便理解，我们将图片转换为文本格式，数字的文本格式如图所示。<br><img src="https://i.loli.net/2019/04/11/5caef44699026.png" alt="数字"><br>与此同时，这些文本格式存储的数字的文件命名也很有特点，格式为：数字的值_该数字的样本序号<br><img src="https://i.loli.net/2019/04/11/5caef47fbb07f.png" alt="文件名"><br>对于这样已经整理好的文本，我们可以直接使用Python处理，进行数字预测。数据集分为训练集和测试集，使用上小结的方法，设计k-近邻算法分类器，可以实现分类。<br>    我们知道数字图片是32x32的二进制图像，为了方便计算，我们可以将32x32的二进制图像转换为1x1024的向量。对于sklearn的KNeighborsClassifier输入可以是矩阵，不用一定转换为向量，，为了方便这里也做了向量化处理。然后构建kNN分类器，利用分类器做预测。<br><img src="https://i.loli.net/2019/04/11/5caf10198b389.png" alt="运行结果"><br>上述代码使用的algorithm参数是auto，更改algorithm参数为brute，使用暴力搜索，你会发现，运行时间变长了，变为10s+。更改n_neighbors参数，你会发现，不同的值，检测精度也是不同的。自己可以尝试更改这些参数的设置，加深对其函数的理解。<br>以上数据改编于<a href="http://archive.ics.uci.edu/ml/index.php" target="_blank" rel="noopener">加州大学UCI机器学习库</a>中的<br><a href="http://archive.ics.uci.edu/ml/datasets/Optical+Recognition+of+Handwritten+Digits" target="_blank" rel="noopener">手写数字数据集的光学识别</a>数据集。<br>最后附上测试数据及全部代码的<a href="/download/KNN项目.zip">压缩文档</a></p>
 
               
 
@@ -279,13 +288,28 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/项目//" class="article-tag-list-link color3">项目</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -335,7 +359,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.ds666.fun/2019/02/10/记一次blog劫后余生/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.ds666.fun/2019/04/11/k-近邻算法实战之sklearn手写数字识别/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -349,18 +373,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/11/php连接oracle数据库配置及操作/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/11/Python实现查找重复名称文件-md5实现查找重复内容文件/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          php连接oracle数据库配置及操作
+          Python实现查找重复名称文件-md5实现查找重复内容文件
         
       </div>
     </a>
   
   
-    <a href="/2019/02/09/php-mysql实现注册登录及留言板功能/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">php+mysql实现注册登录及留言板功能</div>
+    <a href="/2019/04/09/Python爬虫通过Scrapy框架爬取麦田网二手房信息/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python爬虫通过Scrapy框架爬取麦田网二手房信息</div>
       <i class="icon-circle-right"></i>
     </a>
   

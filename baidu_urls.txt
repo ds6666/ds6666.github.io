@@ -1,5 +1,5 @@
+http://www.ds666.fun/2019/04/11/Python实现查找重复名称文件-md5实现查找重复内容文件/
+http://www.ds666.fun/2019/04/11/k-近邻算法实战之sklearn手写数字识别/
 http://www.ds666.fun/2019/04/09/Python爬虫通过Scrapy框架爬取麦田网二手房信息/
 http://www.ds666.fun/2019/04/09/Python爬虫代理ip获取、使用及查看/
 http://www.ds666.fun/2019/04/08/python爬虫爬取猫眼top100/
-http://www.ds666.fun/2019/03/22/将Sublime-Text3变成Python及C-编译器/
-http://www.ds666.fun/2019/03/21/Sublime-Text-3有关插件导入错误及最新版-Build-3200-注册问题/
