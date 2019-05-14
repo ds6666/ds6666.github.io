@@ -18,7 +18,7 @@
 <meta property="og:description" content="这是一篇承上启下的过渡博客">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2019/05/10/5cd4ede0bd334.png">
-<meta property="og:updated_time" content="2019-05-12T15:26:21.752Z">
+<meta property="og:updated_time" content="2019-05-12T15:36:01.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="这是一篇承上启下的过渡博客">
 <meta name="twitter:description" content="这是一篇承上启下的过渡博客">
@@ -44,6 +44,14 @@
 
   
 
+  {% if theme.daovoice %}
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/c08e4b3d.js","daovoice")
+      daovoice('init', {
+        app_id: "{{theme.daovoice_app_id}}"
+      });
+    daovoice('update');
+    </script>
+  {% endif %}
 </head>
 </html>
 <body>
@@ -70,6 +78,8 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/categories/项目/">项目</a></li>
+	        
+				<li><a href="/categories/手机科技/">手机科技</a></li>
 	        
 				<li><a href="/resume/">简历</a></li>
 	        
@@ -135,6 +145,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -157,13 +169,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/项目/">项目</a></li>
+					<li style="width: 20%"><a href="/categories/项目/">项目</a></li>
 		        
-					<li style="width: 25%"><a href="/resume/">简历</a></li>
+					<li style="width: 20%"><a href="/categories/手机科技/">手机科技</a></li>
 		        
-					<li style="width: 25%"><a href="/liuyan/">留言板</a></li>
+					<li style="width: 20%"><a href="/resume/">简历</a></li>
+		        
+					<li style="width: 20%"><a href="/liuyan/">留言板</a></li>
 		        
 				</ul>
 			</nav>
@@ -533,11 +547,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+                <a href="javascript:void(0)" class="js-tag color3">脚本</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,15 +563,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">selenium</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,6 +575,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
@@ -577,15 +587,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过渡</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
