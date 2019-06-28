@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/01/29/5c4fdacd81032.png">
 <meta property="og:image" content="https://i.loli.net/2019/01/29/5c4fdb13c7b7b.png">
 <meta property="og:image" content="https://i.loli.net/2019/01/29/5c4fdb48d1013.png">
-<meta property="og:updated_time" content="2019-06-27T02:06:17.994Z">
+<meta property="og:updated_time" content="2019-06-28T05:43:27.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭博客全过程及遇到的问题和美化">
 <meta name="twitter:description" content="博客搭建">
@@ -268,11 +268,11 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ap = <span class="keyword">new</span> APlayer(&#123;</span><br><span class="line">    container: <span class="built_in">document</span>.getElementById(<span class="string">'aplayer'</span>),</span><br><span class="line">    <span class="comment">// mini: false,</span></span><br><span class="line">    fixed: <span class="literal">true</span>,<span class="comment">//吸底模式</span></span><br><span class="line">    autoplay: <span class="literal">true</span>,<span class="comment">//默认是否自动播放</span></span><br><span class="line">    theme: <span class="string">'#FADFA3'</span>,</span><br><span class="line">    loop: <span class="string">'all'</span>,</span><br><span class="line">    order: <span class="string">'random'</span>,</span><br><span class="line">    preload: <span class="string">'auto'</span>,</span><br><span class="line">    volume: <span class="number">0.4</span>,<span class="comment">//默认音量</span></span><br><span class="line">    mutex: <span class="literal">true</span>,<span class="comment">//是否不允许多个播放器同时播放</span></span><br><span class="line">    listFolded: <span class="literal">true</span>,<span class="comment">//是否默认收起播放列表</span></span><br><span class="line">    listMaxHeight: <span class="number">90</span>,<span class="comment">//播放列表的高度</span></span><br><span class="line">    <span class="comment">//lrcType: 3, //使用lrc文件提供歌词</span></span><br><span class="line">    <span class="comment">//网易云默认外链链接：http://music.163.com/song/media/outer/url?id=ID数字.mp3</span></span><br><span class="line">    audio: [</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'生僻字'</span>,</span><br><span class="line">            artist: <span class="string">'陈柯宇'</span>,</span><br><span class="line">            url: <span class="string">'http://music.163.com/song/media/outer/url?id=518781004.mp3'</span>,</span><br><span class="line">            cover: <span class="string">'http://p1.music.126.net/fzy5I3GvAjiDfwhIEbgXuw==/109951163062323125.jpg'</span>,</span><br><span class="line">            lrc: <span class="string">'/./dist/music/lrc/518781004.lrc'</span>,</span><br><span class="line">            theme: <span class="string">'#46718b'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'光年之外'</span>,</span><br><span class="line">            artist: <span class="string">'邓紫棋'</span>,</span><br><span class="line">            url: <span class="string">'http://music.163.com/song/media/outer/url?id=449818741.mp3'</span>,</span><br><span class="line">            cover: <span class="string">'http://p1.music.126.net/fkqFqMaEt0CzxYS-0NpCog==/18587244069235039.jpg'</span>,</span><br><span class="line">            lrc: <span class="string">'/./dist/music/lrc/449818741.lrc'</span>,</span><br><span class="line">        theme: <span class="string">'#46718b'</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>我这里用的是网易云歌曲的外链接，在网页打开网易云，找到你要用的背景音乐页面，上面链接中会有歌曲的id，替换对应url下的歌曲id即可，歌曲图片可以右键点击网页上的歌曲封面，审查元素，然后找到对应的外链链接，对于一些需要版权什么的歌曲，可以去<a href="http://www.333ttt.com/up/" target="_blank" rel="noopener">歌曲外链大全</a>上搜索一下，替换对应的歌曲链接url和封面图片的url即可，其中audio标签下，就是我加进去的歌曲，由于我把lrcType: 3注释了，所以lrc歌词文件不会生效。<br>至此到blog目录hexo g，hexo d布置一下即可查看效果。</p>
 <h2 id="在博客下添加看板娘"><a href="#在博客下添加看板娘" class="headerlink" title="在博客下添加看板娘"></a>在博客下添加看板娘</h2><p><a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">看板娘即live2d</a>，用 Git Bash Here 在blog目录执行如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">这里</a>可以看到模型的预览效果，但有可能不准，我下的就是串的，，选好自己想要的模型，然后安装</p>
+<p><a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">这里</a>可以看到模型的预览效果，<del>但有可能不准，我下的就是串的</del>，，选好自己想要的模型，然后安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install <span class="string">"模型的包名"</span> --save</span><br></pre></td></tr></table></figure>
 <p>模型包名</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">live2d-widget-model-chitose</span><br><span class="line">live2d-widget-model-epsilon2_1</span><br><span class="line">live2d-widget-model-gf</span><br><span class="line">live2d-widget-model-haru/01 (use npm install --save live2d-widget-model-haru)</span><br><span class="line">live2d-widget-model-haru/02 (use npm install --save live2d-widget-model-haru)</span><br><span class="line">live2d-widget-model-haruto</span><br><span class="line">live2d-widget-model-hibiki</span><br><span class="line">live2d-widget-model-hijiki</span><br><span class="line">live2d-widget-model-izumi</span><br><span class="line">live2d-widget-model-koharu</span><br><span class="line">live2d-widget-model-miku</span><br><span class="line">live2d-widget-model-ni-j</span><br><span class="line">live2d-widget-model-nico</span><br><span class="line">live2d-widget-model-nietzsche</span><br><span class="line">live2d-widget-model-nipsilon</span><br><span class="line">live2d-widget-model-nito</span><br><span class="line">live2d-widget-model-shizuku</span><br><span class="line">live2d-widget-model-tororo</span><br><span class="line">live2d-widget-model-tsumiki</span><br><span class="line">live2d-widget-model-unitychan</span><br><span class="line">live2d-widget-model-wanko</span><br><span class="line">live2d-widget-model-z16</span><br></pre></td></tr></table></figure>
-<p>在blog下的或者yilia(推荐)下的_config.yml文件添加配置</p>
+<p>在blog下的<del>或者yilia(推荐)下的</del>_config.yml文件添加配置(一定要在blog下的配置！！！)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true              # 是否开启</span><br><span class="line">  scriptFrom: local         # 默认</span><br><span class="line">  pluginRootPath: live2dw/  # 插件在站点上的根目录(相对路径)</span><br><span class="line">  pluginJsPath: lib/        # 脚本文件相对与插件根目录路径</span><br><span class="line">  pluginModelPath: assets/  # 模型文件相对与插件根目录路径</span><br><span class="line">  # scriptFrom: jsdelivr    # jsdelivr CDN</span><br><span class="line">  # scriptFrom: unpkg       # unpkg CDN</span><br><span class="line">  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko # 调用模型名，必须要先下载</span><br><span class="line">  display:</span><br><span class="line">    position: right         # 在博客的左边还是右边显示</span><br><span class="line">    width: 150              # 边框宽度</span><br><span class="line">    height: 300             # 边框高度</span><br><span class="line">  mobile:</span><br><span class="line">    show: true              # 是否在手机上显示</span><br><span class="line">    # use: wanko            # 博客根目录/live2d_models/ 下的目录名</span><br><span class="line">    # use: ./wives/wanko    # 相对于博客根目录的路径</span><br><span class="line">    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url</span><br></pre></td></tr></table></figure>
 <p>详细配置见<a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">文档</a>下的细节设置和常规设置。<br>hexo g，hexo d重新部署即可看到效果</p>
 <h2 id="文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等"><a href="#文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等" class="headerlink" title="文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等"></a>文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等</h2><p>访问量的统计都是基于<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>。<br>在yilia\layout\_partial\post目录下创建word.ejs文件：</p>
@@ -614,6 +614,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
               </li>
              
@@ -630,15 +638,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -658,10 +666,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
@@ -675,10 +679,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">刷机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -812,5 +812,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
  <script src="/./dist/hls.min.js"></script>
  <script src="/./dist/APlayer.min.js"></script>
  <script src="/./dist/musicPlay.js"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"react":{"opacityDefault":0.7,"opacityOnHover":0.3},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"react":{"opacityDefault":0.7,"opacityOnHover":0.3},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
 </html>

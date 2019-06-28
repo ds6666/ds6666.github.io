@@ -1,1 +1,1 @@
-http://www.ds666.fun/2019/06/25/Python-web用Django实现证券系统（移植之前的php项目）/
+http://www.ds666.fun/2019/06/28/hexo-添加live2d的一个坑（望新人注意）/
