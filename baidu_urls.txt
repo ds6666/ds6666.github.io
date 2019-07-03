@@ -1,1 +1,1 @@
-http://www.ds666.fun/2019/06/28/hexo-添加live2d的一个坑（望新人注意）/
+http://www.ds666.fun/2019/07/03/python3-7下安装dlib模块-神坑/
