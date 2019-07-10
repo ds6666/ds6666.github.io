@@ -23,6 +23,13 @@ const ap = new APlayer({
             theme: '#46718b'
         },
         {
+            name: '红昭愿',
+            artist: '音阙诗听',
+            url: 'http://music.163.com/song/media/outer/url?id=452986458.mp3',
+            cover: 'http://p1.music.126.net/8ltR3o9R8uJ9_5Cc71cDhA==/109951162951242154.jpg',
+            theme: '#46718b'
+        },
+        {
             name: '绿色',
             artist: '陈雪凝',
             url: 'http://music.163.com/song/media/outer/url?id=1345848098.mp3',
@@ -34,7 +41,6 @@ const ap = new APlayer({
             artist: '买辣椒也用券',
             url: 'http://sc1.111ttt.cn/2018/1/03/13/396131213056.mp3',
             cover: 'http://p1.music.126.net/diGAyEmpymX8G7JcnElncQ==/109951163699673355.jpg',
-            lrc: '/./dist/music/lrc/449818741.lrc',
 	        theme: '#46718b'
         },
         {
