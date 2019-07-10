@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/07/08/5d2345aceabfd63264.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/08/5d23463705ece39941.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/08/5d2347bd6f3aa46752.png">
-<meta property="og:updated_time" content="2019-07-08T14:25:05.372Z">
+<meta property="og:updated_time" content="2019-07-09T07:41:14.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Debian kali linux x64下Python + Django + Nginx + uWSGI环境配置">
 <meta name="twitter:description" content="Debian kali linux x64下Python + Django + Nginx + uWSGI环境配置">
@@ -251,7 +251,7 @@
 <h3 id="Debian-kali-linux-x64下Python-Django-Nginx-uWSGI环境配置"><a href="#Debian-kali-linux-x64下Python-Django-Nginx-uWSGI环境配置" class="headerlink" title="Debian kali linux x64下Python + Django + Nginx + uWSGI环境配置"></a>Debian kali linux x64下Python + Django + Nginx + uWSGI环境配置</h3><a id="more"></a>
 <p>本来是想项目的部署和环境搭建放到一篇博客里面，结果这个环境部署坑还是挺多的，就单写一篇博客来说一下这个环境部署的流程，正如标题说的那样我是基于Debian kali linux虚拟机环境配置的环境，以下我会从零开始一步一步讲述如何去配置出所需的环境</p>
 <h5 id="一、虚拟机的下载与配置"><a href="#一、虚拟机的下载与配置" class="headerlink" title="一、虚拟机的下载与配置"></a>一、虚拟机的下载与配置</h5><p>1.首先先给一个vmware 15Pro的破解包<br>链接: <a href="https://pan.baidu.com/s/1_36O-bvUWtgNODAeoLx0fw" target="_blank" rel="noopener">https://pan.baidu.com/s/1_36O-bvUWtgNODAeoLx0fw</a> 提取码: 85yc<br>破解安装的流程就不加多述了，有问题可以参见本博客配图(^_−)☆</p>
-<p>2.<a href="https://www.kali.org/downloads/" target="_blank" rel="noopener">kali linux官方下载</a>，选HTTP下载，一定要点保存选好路径！一定要点保存选好路径！一定要点保存选好路径！下了两遍的我提醒道。<br>然后，你问我怎么安啊？你问我我不也得百度，<a href="https://blog.csdn.net/qq_42242380/article/details/89841078" target="_blank" rel="noopener">kali Linux的下载与安装</a>，具体可以参照这篇文章，然后我是选的典型安装，直接选取下载的iso文件，选64位linux，省心省事，之后开机后就可以按照他的步骤来进入图形化安装界面配置了，最后联网的问题，这里我选择的桥接模式联网，这个模式的话只要你的主体机练连不是一些需要登陆什么的那种网络(校园网)，都是只要主机有网，虚拟机就有网，连校园网的话可是手机端连接然后开WiFi信号桥来配置，反正其他的联网模式我都试过，校园网均失败。安装好之后调整一下分辨率，和壁纸(有需要的话)就可以开始快乐的玩耍了。配置完之后首先要先存一个快照！！！就是上面一排小时钟标志的分别对应存储快照，读取上一个快照，管理快照，快照是什么呢？就是相当于游戏的存档，读取对应的快照就可以将所有配置退回到当时的状态。</p>
+<p>2.<a href="https://www.kali.org/downloads/" target="_blank" rel="noopener">kali linux官方下载</a>，选HTTP下载，一定要点保存选好路径！一定要点保存选好路径！一定要点保存选好路径！下了两遍的我提醒道。<br>然后，你问我怎么安啊？你问我我不也得百度，<a href="https://blog.csdn.net/qq_42242380/article/details/89841078" target="_blank" rel="noopener">kali Linux的下载与安装</a>，具体可以参照这篇文章，然后我是选的典型安装，直接选取下载的iso文件，选64位linux，省心省事，之后开机后就可以按照他的步骤来进入图形化安装界面配置了，最后联网的问题，这里我选择的桥接模式联网，这个模式的话只要你的主体机连的不是一些需要登陆什么的那种网络(校园网)，都是只要主机有网，虚拟机就有网，连校园网的话可以手机端连接然后开WiFi信号桥来配置，反正其他的联网模式我都试过，校园网均失败。安装好之后调整一下分辨率，和壁纸(有需要的话)就可以开始快乐的玩耍了。配置完之后首先要先存一个快照！！！就是上面一排小时钟标志的分别对应存储快照，读取上一个快照，管理快照，快照是什么呢？就是相当于游戏的存档，读取对应的快照就可以将所有配置退回到当时的状态。</p>
 <h5 id="二、Debian配置Python环境"><a href="#二、Debian配置Python环境" class="headerlink" title="二、Debian配置Python环境"></a>二、Debian配置Python环境</h5><p>1.打开终端输入ls /usr/bin/python*<br>查看系统自带配置的Python环境变量，这里的Python默认是2.7版本，Python3默认为3.7.0版本，可以在命令行中输入python –version和python3 –version来查看<br>usr/bin目录下的文件叫做软连接，就相当于windows的环境变量。<br><img src="https://i.loli.net/2019/07/08/5d231dd912d1669700.png" alt="ls /usr/bin/python*"> </p>
 <p>2.修改默认Python版本：<br>1)基于用户修改 Python 版本：<br>想要为某个特定用户修改 Python 版本，只需要在其 home 目录下创建一个 alias(别名) 即可。打开该用户的 ~/.bashrc 文件，添加新的别名信息来修改默认使用的 Python 版本。<br>alias python=’/usr/bin/python3.7’<br>一旦完成以上操作，重新登录或者重新加载 .bashrc 文件，使操作生效，重新加载.bashrc文件命令如下：<br>$ . ~/.bashrc<br>检查当前的 Python 版本，命令如下：<br>$ python –version Python 3.7.0</p>
 <p>2)基于系统修改Python版本：<br>我们可以使用 update-alternatives 来为整个系统更改 Python 版本。以 root 身份登录，首先罗列出所有可用的 python 替代版本信息：</p>
@@ -305,7 +305,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>II.编译安装<br>I.编译安装sqlite3</p>
+<p>II.编译安装sqlite3</p>
 <ul>
 <li><p>下载</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.sqlite.org/2019/sqlite-autoconf-3280000.tar.gz</span><br></pre></td></tr></table></figure>
@@ -381,7 +381,8 @@
 <p>III.加载安装源导入key<br><a href="http://www.debian.cn/archives/2738" target="_blank" rel="noopener">Debian 环境安装新版 nginx</a></p>
 <p>2.配置nginx并测试<br>kali linux默认80端口为Apache配置<br><img src="https://i.loli.net/2019/07/08/5d23424cd515925691.png" alt="80端口Apache"><br>nginx一般默认安装好的路径为/usr/local/nginx，在/user/local/nginx/conf/中打开nginx.conf，将其中的80端口改为808端口<br><img src="https://i.loli.net/2019/07/08/5d234354af1d536443.png" alt="改配置"> </p>
 <p>然后运行命令行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx start</span><br></pre></td></tr></table></figure></p>
-<p>输入localhost:808端口查看<br><img src="https://i.loli.net/2019/07/08/5d2343e1f20b183624.png" alt="nginx"><br>要注意的是如果你不关nginx服务，将会一直运行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx restart</span><br><span class="line">sudo service nginx reload</span><br><span class="line">sudo service nginx stop</span><br></pre></td></tr></table></figure></p>
+<p>输入localhost:808端口查看<br><img src="https://i.loli.net/2019/07/08/5d2343e1f20b183624.png" alt="nginx"><br>要注意的是如果你不关nginx服务，将会一直运行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx restart</span><br><span class="line">sudo service nginx reload</span><br><span class="line">sudo service nginx stop</span><br></pre></td></tr></table></figure>
 <p>以上是nginx部分操作命令</p>
 <h5 id="四、Debian安装Django"><a href="#四、Debian安装Django" class="headerlink" title="四、Debian安装Django"></a>四、Debian安装Django</h5><p>跟windows安装操作一样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install Django</span><br></pre></td></tr></table></figure></p>
 <p>然后创建项目的命令也一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject mysite</span><br><span class="line"></span><br><span class="line">cd mysite</span><br><span class="line"></span><br><span class="line">python manage.py startapp firstapp      </span><br><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure></p>
@@ -391,7 +392,8 @@
 <p>在hosts文件中添加以下信息，vim下按i，左下角显示插入，修改文件，然后esc，打:wq保存文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.0.0.0 https://account.jetbrains.com:443</span><br></pre></td></tr></table></figure></p>
 <p>打开cmd终端，输入ipconfig /flushdns，然后回车刷新dns缓存</p>
 <p>然后解压下载的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvzf pycharm-professional-2019.1.3.tar.gz</span><br></pre></td></tr></table></figure></p>
-<p>解压后将pycharm文件夹移动到/usr/local/lib/目录下<br>进入pycharm的bin目录，执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./pycharm.sh</span><br></pre></td></tr></table></figure></p>
+<p>解压后将pycharm文件夹移动到/usr/local/lib/目录下</p>
+<p>进入pycharm的bin目录，执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./pycharm.sh</span><br></pre></td></tr></table></figure></p>
 <p>默认一直敲回车就行，反正一堆英文也看不懂。<br>选择注册码激活（Activate code）有效期至2019年11月<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">YZVR7WDLV8-eyJsaWNlbnNlSWQiOiJZWlZSN1dETFY4IiwibGljZW5zZWVOYW1lIjoiamV0YnJhaW5zIGpzIiwiYXNzaWduZWVOYW1lIjoiIiwiYXNzaWduZWVFbWFpbCI6IiIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IkZvciBlZHVjYXRpb25hbCB1c2Ugb25seSIsImNoZWNrQ29uY3VycmVudFVzZSI6ZmFsc2UsInByb2R1Y3RzIjpbeyJjb2RlIjoiSUkiLCJwYWlkVXBUbyI6IjIwMTktMTEtMjYifSx7ImNvZGUiOiJBQyIsInBhaWRVcFRvIjoiMjAxOS0xMS0yNiJ9LHsiY29kZSI6IkRQTiIsInBhaWRVcFRvIjoiMjAxOS0xMS0yNiJ9LHsiY29kZSI6IlBTIiwicGFpZFVwVG8iOiIyMDE5LTExLTI2In0seyJjb2RlIjoiR08iLCJwYWlkVXBUbyI6IjIwMTktMTEtMjYifSx7ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjAxOS0xMS0yNiJ9LHsiY29kZSI6IkNMIiwicGFpZFVwVG8iOiIyMDE5LTExLTI2In0seyJjb2RlIjoiUlMwIiwicGFpZFVwVG8iOiIyMDE5LTExLTI2In0seyJjb2RlIjoiUkMiLCJwYWlkVXBUbyI6IjIwMTktMTEtMjYifSx7ImNvZGUiOiJSRCIsInBhaWRVcFRvIjoiMjAxOS0xMS0yNiJ9LHsiY29kZSI6IlBDIiwicGFpZFVwVG8iOiIyMDE5LTExLTI2In0seyJjb2RlIjoiUk0iLCJwYWlkVXBUbyI6IjIwMTktMTEtMjYifSx7ImNvZGUiOiJXUyIsInBhaWRVcFRvIjoiMjAxOS0xMS0yNiJ9LHsiY29kZSI6IkRCIiwicGFpZFVwVG8iOiIyMDE5LTExLTI2In0seyJjb2RlIjoiREMiLCJwYWlkVXBUbyI6IjIwMTktMTEtMjYifSx7ImNvZGUiOiJSU1UiLCJwYWlkVXBUbyI6IjIwMTktMTEtMjYifV0sImhhc2giOiIxMTA1NzI3NC8wIiwiZ3JhY2VQZXJpb2REYXlzIjowLCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-rsJR5mlJcjibqRu1gQAMUCngMe8i+AOWIi+JZkNFYPET2G1ONcLPcIzoATTRi6ofkDm5l+3Y4HXjBPjVU6bHDdMBAzCnUqpXKsCknwSYyPSU0Y5pzuLvw6O9aPlQ46UBoTEC2BL5W6f11S7NlAq7tTbDuvFUynqSGAmTEfuZtKmzRmp20ejTPuMlSO7UqSkZvkg6YvSTrax1d2K+P9SAmVGZ9iC7AzBs4AwTf84QB9qHvE/Nh0oELSHWGG9hsZZ7sVghI/39/jPQFTp8GLFsl36ZPybPhGDam721zxS9H++/eJk23Jz3nxaRluE4dWmpHrDg1qBHp8qVpSFejg2QYw==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==</span><br></pre></td></tr></table></figure></p>
 <p>添加快捷方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /usr/share/applications/Pycharm.desktop</span><br></pre></td></tr></table></figure></p>
 <p>添加内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Type=Application</span><br><span class="line">Name=Pycharm</span><br><span class="line">GenericName=Pycharm3</span><br><span class="line">Comment=Pycharm3:The Python IDE</span><br><span class="line">Exec=sh 实际路径/bin/pycharm.sh</span><br><span class="line">Icon= 实际路径/bin/pycharm.png</span><br><span class="line">Terminal=pycharm</span><br><span class="line">Categories=Pycharm;</span><br></pre></td></tr></table></figure></p>
@@ -585,6 +587,21 @@
 
   
 
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
           </div>
         </div>

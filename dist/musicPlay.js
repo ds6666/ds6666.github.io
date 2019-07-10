@@ -15,18 +15,18 @@ const ap = new APlayer({
 	//网易云默认外链链接：http://music.163.com/song/media/outer/url?id=ID数字.mp3
     audio: [
         {
-            name: '红昭愿',
-            artist: '音阙诗听',
-            url: 'http://music.163.com/song/media/outer/url?id=452986458.mp3',
-            cover: 'http://p2.music.126.net/8ltR3o9R8uJ9_5Cc71cDhA==/109951162951242154.jpg',
+            name: '你的酒馆对我打了烊',
+            artist: '陈雪凝',
+            url: 'http://music.163.com/song/media/outer/url?id=1341964346.mp3',
+            cover: 'http://p1.music.126.net/LiRR__0pJHSivqBHZzbMUw==/109951163816225567.jpg',
             lrc: '/./dist/music/lrc/452986458.lrc',
             theme: '#46718b'
         },
         {
-            name: '云烟成雨',
-            artist: '房东的猫',
-            url: 'http://music.163.com/song/media/outer/url?id=513360721.mp3',
-            cover: 'http://p1.music.126.net/DSTg1dR7yKsyGq4IK3NL8A==/109951163046050093.jpg',
+            name: '绿色',
+            artist: '陈雪凝',
+            url: 'http://music.163.com/song/media/outer/url?id=1345848098.mp3',
+            cover: 'http://p2.music.126.net/R4ZP3AJ9xV0vvw8LX7AbMA==/109951163860425334.jpg',
             theme: '#46718b'
         },
 		{
@@ -40,7 +40,7 @@ const ap = new APlayer({
         {
             name: '两两相忘',
             artist: '曲肖冰',
-            url: 'https://m7.music.126.net/20190708224341/74962241314b9b3a728469bb45f2487a/ymusic/48ec/b7cc/dab7/6bbc53a37e9e281491e7300c70e6b458.mp3',
+            url: 'http://dl.stream.qqmusic.qq.com/C400004TqenC2rhoi0.m4a?guid=6036088559&vkey=6BE351AA7052871C4AD9DD200C9CF539F71E8900720E2320F6CD80FDF1AD65853D3643DA511A542B07CB9D65FD6FD5FFD74545A1C5F6FC71&uin=7086&fromtag=66',
             cover: 'http://p1.music.126.net/5F-eackmyizq4kAt7SEBuQ==/109951163975909720.jpg',
             theme: '#46718b'
         }
