@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/06/26/5d1319af18a6165712.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/27/5d143494a3c2a43007.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/27/5d1434e18409515489.png">
-<meta property="og:updated_time" content="2019-07-27T02:17:56.438Z">
+<meta property="og:updated_time" content="2019-07-27T09:48:20.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python web用Django实现证券系统（移植之前的php项目）">
 <meta name="twitter:description" content="Python web用Django实现证券系统（移植之前的php项目）">
@@ -243,6 +243,30 @@
       </header>
     
     
+        <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+              <span class="btn-bg"></span>
+              <span class="btn-text">文章导航</span>
+              </p>
+      <div id="toc-article" class="toc-article">
+          <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+        <strong class="toc-title">文章目录</strong>
+               <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-web用Django实现证券系统（移植之前的php项目）"><span class="toc-number">1.</span> <span class="toc-text">Python web用Django实现证券系统（移植之前的php项目）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、关于Django"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、关于Django</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、Django连接Oracle数据库配置"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、Django连接Oracle数据库配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、证券系统项目编写"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、证券系统项目编写</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四、在腾讯证券行情中心爬取证券信息"><span class="toc-number">1.0.4.</span> <span class="toc-text">四、在腾讯证券行情中心爬取证券信息</span></a></li></ol></li></ol>
+             </div>
+       <script type="text/javascript">
+      function showToc(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:block");
+        show_toc_btn.setAttribute("style","display:none");
+        };
+      function showBtn(){
+        var toc_article = document.getElementById("toc-article");
+        var show_toc_btn = document.getElementById("show-toc-btn");
+        toc_article.setAttribute("style","display:none");
+        show_toc_btn.setAttribute("style","display:block");
+        };
+       </script>
+      
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://i.loli.net/2019/06/25/5d11d8109149975521.png" alt="米法老婆"></p>
@@ -455,6 +479,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-web用Django实现证券系统（移植之前的php项目）"><span class="toc-number">1.</span> <span class="toc-text">Python web用Django实现证券系统（移植之前的php项目）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、关于Django"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、关于Django</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、Django连接Oracle数据库配置"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、Django连接Oracle数据库配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、证券系统项目编写"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、证券系统项目编写</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四、在腾讯证券行情中心爬取证券信息"><span class="toc-number">1.0.4.</span> <span class="toc-text">四、在腾讯证券行情中心爬取证券信息</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
