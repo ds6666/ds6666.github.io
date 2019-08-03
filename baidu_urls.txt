@@ -1,1 +1,1 @@
-http://www.ds666.fun/2019/07/26/Python-web用Django开发一个完整的论坛-影评系统（附移动端）并通过Nginx-uWSGI部署/
+http://www.ds666.fun/2019/08/02/批量导出微信语音消息为mp3并附python修改文件名脚本/

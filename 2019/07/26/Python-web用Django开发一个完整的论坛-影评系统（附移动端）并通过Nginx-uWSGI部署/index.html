@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/07/27/5d3c09710544d49117.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/27/5d3c09cfeae0036598.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/27/5d3c0a34b527354330.png">
-<meta property="og:updated_time" content="2019-07-27T10:29:14.249Z">
+<meta property="og:updated_time" content="2019-08-03T03:09:10.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python web用Django开发一个完整的论坛&#x2F;影评系统（附移动端）并通过Nginx+uWSGI部署">
 <meta name="twitter:description" content="Python web用Django开发一个完整的论坛/影评系统（附移动端）并通过Nginx+uWSGI部署">
@@ -98,6 +98,8 @@
 				<li><a href="/categories/项目/">项目</a></li>
 	        
 				<li><a href="/categories/手机科技/">手机科技</a></li>
+	        
+				<li><a href="/categories/脚本/">脚本</a></li>
 	        
 				<li><a href="/resume/">简历</a></li>
 	        
@@ -165,6 +167,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -187,15 +191,17 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 20%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 20%"><a href="/categories/项目/">项目</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/项目/">项目</a></li>
 		        
-					<li style="width: 20%"><a href="/categories/手机科技/">手机科技</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/手机科技/">手机科技</a></li>
 		        
-					<li style="width: 20%"><a href="/resume/">简历</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/脚本/">脚本</a></li>
 		        
-					<li style="width: 20%"><a href="/liuyan/">留言板</a></li>
+					<li style="width: 16.666666666666668%"><a href="/resume/">简历</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/liuyan/">留言板</a></li>
 		        
 				</ul>
 			</nav>
@@ -227,7 +233,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">8.3k字</span>
+        <span class="post-count">8.4k字</span>
       </span>
     </span>
 
@@ -378,7 +384,7 @@
 <p>即包含conf.d文件下的所有配置，然后conf.d文件夹下有一个默认配置文件default.conf<br>里面默认的端口为80，由于被Apache所占用(配置环境那篇博客提到)所以我改为808端口，即启动服务后808端口为nginx欢迎界面。<br>接下来配置mysite.conf文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">upstream django &#123;</span><br><span class="line"></span><br><span class="line">    server 127.0.0.1:8888; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">    listen 8080;</span><br><span class="line">    server_name localhost;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    client_max_body_size 75M;  #上传文件大小限制</span><br><span class="line"></span><br><span class="line">    # 网站静态文件所在目录</span><br><span class="line">    location /static&#123;</span><br><span class="line">        alias /root/firstsite/static;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 上传文件所在目录</span><br><span class="line">    location /media&#123;</span><br><span class="line">        alias /root/firstsite/firstapp/media;</span><br><span class="line">    &#125;</span><br><span class="line">    # 动态文件交给uwsgi处理</span><br><span class="line">    location / &#123;</span><br><span class="line">        uwsgi_pass 127.0.0.1:8888;</span><br><span class="line">        include /etc/nginx/uwsgi_params;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这里是通过ip来与uwsgi连接的，而且包含uwsgi_params。<br>正常访问uwsgi需要一个uwsgi_params的文件，在编译安装的目录中有这个文件，可以直接使用。如果没有可以从 <a href="https://github.com/nginx/nginx/blob/master/conf/uwsgi_params" target="_blank" rel="noopener">github</a> 获取<br>然后把这个文件复制到firstsite工程目录中。之后再include对应的路径。<br>其中的127.0.0.1:8888可以用django代替，upstream django为django优先使用为server的端口。<br>或者可以通过.sock文件来连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 指定项目路径uwsgi</span><br><span class="line">        location / &#123;        # 这个location就和咱们Django的url(r&apos;^admin/&apos;, admin.site.urls),</span><br><span class="line">            include uwsgi_params;  # 导入一个Nginx模块他是用来和uWSGI进行通讯的</span><br><span class="line">            uwsgi_connect_timeout 30;  # 设置连接uWSGI超时时间</span><br><span class="line">            # 指定uwsgi的sock文件所有动态请求就会直接丢给他</span><br><span class="line">            uwsgi_pass unix:firstsite/mysite_uwsgi/uwsgi.sock;  </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
 <p>总之保证这里的uwsgi_pass和uwsgi里面的socket配置的可以匹配即可。<br>最后8080为暴露在外面供调用的端口</p>
-<p>附:如果为另一种结构</p>
+<p>附:如果为另一种结构，直接将默认配置文件备份后替换成mysite.conf即可</p>
 <h3 id="4-配置静态文件路径"><a href="#4-配置静态文件路径" class="headerlink" title="4.配置静态文件路径"></a>4.配置静态文件路径</h3><p>在项目中的settings.py中添加如下两行，并在根目录创建static文件夹对应nginx中/static后配置的路径。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">STATIC_ROOT = os.path.join(BASE_DIR, <span class="string">"static/"</span>)</span><br><span class="line"><span class="comment"># Static files (CSS, JavaScript, Images)</span></span><br><span class="line"><span class="comment"># https://docs.djangoproject.com/en/1.11/howto/static-files/</span></span><br><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br></pre></td></tr></table></figure></p>
 <p>然后运行来收集静态文件以便nginx管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py collectstatic</span><br></pre></td></tr></table></figure></p>
 <h3 id="5-nginx-uwsgi管理项目"><a href="#5-nginx-uwsgi管理项目" class="headerlink" title="5.nginx+uwsgi管理项目"></a>5.nginx+uwsgi管理项目</h3><p>首先运行uwsgi配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwsgi --ini firstsite/mysite_uwsgi/uwsgi.ini</span><br></pre></td></tr></table></figure></p>
@@ -557,6 +563,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/08/02/批量导出微信语音消息为mp3并附python修改文件名脚本/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          批量导出微信语音消息为mp3并附python修改文件名脚本
+        
+      </div>
+    </a>
   
   
     <a href="/2019/07/08/Debian-kali-linux-x64下Python-Django-Nginx-uWSGI环境配置/" id="article-nav-older" class="article-nav-link-wrap">
@@ -775,11 +790,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">脚本</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -791,19 +810,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -812,6 +827,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1010,7 +1033,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
  <link rel="stylesheet" href="/./dist/APlayer.min.css">
  <div id="aplayer" style="z-index: 99999;"></div>
- <script src="/./dist/hls.min.js"></script>
  <script src="/./dist/APlayer.min.js"></script>
  <script src="/./dist/musicPlay.js"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"react":{"opacityDefault":0.7,"opacityOnHover":0.3},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>

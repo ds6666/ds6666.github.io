@@ -19,7 +19,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2019/04/11/5caf043ae4dff.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/11/5caf0b6ca2169.png">
-<meta property="og:updated_time" content="2019-04-11T11:56:10.727Z">
+<meta property="og:updated_time" content="2019-08-03T08:29:00.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python实现查找重复名称文件-md5实现查找重复内容文件">
 <meta name="twitter:description" content="Python实现查找重复名称文件-md5实现查找重复内容文件">
@@ -82,6 +82,8 @@
 				<li><a href="/categories/项目/">项目</a></li>
 	        
 				<li><a href="/categories/手机科技/">手机科技</a></li>
+	        
+				<li><a href="/categories/脚本/">脚本</a></li>
 	        
 				<li><a href="/resume/">简历</a></li>
 	        
@@ -149,6 +151,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -171,15 +175,17 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 20%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 20%"><a href="/categories/项目/">项目</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/项目/">项目</a></li>
 		        
-					<li style="width: 20%"><a href="/categories/手机科技/">手机科技</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/手机科技/">手机科技</a></li>
 		        
-					<li style="width: 20%"><a href="/resume/">简历</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/脚本/">脚本</a></li>
 		        
-					<li style="width: 20%"><a href="/liuyan/">留言板</a></li>
+					<li style="width: 16.666666666666668%"><a href="/resume/">简历</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/liuyan/">留言板</a></li>
 		        
 				</ul>
 			</nav>
@@ -211,7 +217,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">749字</span>
+        <span class="post-count">789字</span>
       </span>
     </span>
 
@@ -241,12 +247,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://i.loli.net/2019/04/11/5caf043ae4dff.png" alt="黑洞"> </p>
-<h3 id="Python实现查找重复名称文件-md5实现查找重复内容文件"><a href="#Python实现查找重复名称文件-md5实现查找重复内容文件" class="headerlink" title="Python实现查找重复名称文件-md5实现查找重复内容文件"></a>Python实现查找重复名称文件-md5实现查找重复内容文件</h3><a id="more"></a>
+<h2 id="Python实现查找重复名称文件-md5实现查找重复内容文件"><a href="#Python实现查找重复名称文件-md5实现查找重复内容文件" class="headerlink" title="Python实现查找重复名称文件-md5实现查找重复内容文件"></a>Python实现查找重复名称文件-md5实现查找重复内容文件</h2><a id="more"></a>
 <p>相信很多人都有这个烦恼，文件夹中存在大量的文件，子文件夹中又有一些文件，有很多重名了，有很多虽然名字不一样，但内容确实一摸一样，这样就占用了大量的空间，挨个去找却又即为耗时耗力。这里我就介绍一个基于Python以及hashlib模块下的md5来找出这些重复文件并自动删除。</p>
 <p><a href="https://baike.baidu.com/item/MD5/212708?fr=aladdin" target="_blank" rel="noopener">md5</a>就是一种加密方式，用于确保信息传输完整一致，Python的<a href="https://docs.python.org/2/library/md5.html" target="_blank" rel="noopener">md5官方文档</a>详细介绍了其使用方法，请自行查阅。<br>1、代码解析<br>1)查找文件名相同的文件，并输出其文件名，大小，路径，创建时间<br>首先建立一个空的file_l列表用于存放每个文件。<br>然后用os.walk方法遍历路径，以及其子目录，获取文件。判断如果文件名没在file_l列表中则append，若是已经存在，就输出重名文件名，大小，路径，创建时间。</p>
 <p>2)查找文件内容相同的文件，并索引其位置，删除掉。<br>首先类似的新建一个空的字典dup用于存放每个文件的md5值和对应的文件（列表形式），分别作为key，value。<br>同样用os.walk方法遍历路径，以及其子目录，获取文件，并同时获取其md5值，如果对应文件的md5值没有重复的，就以此md5为k，并将文件加到value列表中，如果遍历到与其相同的md5值，则输出提示/删除掉此文件，这里采用输出提示，并append到对应的value列表中。</p>
 <p>2、案例测试<br>我在test文件夹下分别新建1.txt，2.txt，3.txt并依次存入123，456，789，接着又分别新建t1文件夹下新建1.txt，存入123，t2、t3同理。<br>然后输入路径test运行结果如下：<br><img src="https://i.loli.net/2019/04/11/5caf0b6ca2169.png" alt="结果"><br>最后附上源代码：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">file_l=[]</span><br><span class="line">dup = &#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findsame</span><span class="params">(path)</span>:</span></span><br><span class="line">    pwd=os.getcwd()</span><br><span class="line">    <span class="keyword">for</span> root,dirs,files <span class="keyword">in</span> os.walk(path):</span><br><span class="line">        os.chdir(path)</span><br><span class="line">        <span class="keyword">for</span> each_file <span class="keyword">in</span> files:</span><br><span class="line">            <span class="comment">#判断相同内容文件</span></span><br><span class="line">            hash = md5sum(each_file)</span><br><span class="line">            <span class="keyword">if</span> hash <span class="keyword">not</span> <span class="keyword">in</span> dup.keys():</span><br><span class="line">                dup[hash] = [each_file]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                print(<span class="string">"在%s中发现重复内容文件%s"</span>%(root,each_file))</span><br><span class="line">                dup[hash].append(each_file)</span><br><span class="line">                <span class="comment"># os.remove(each_file)</span></span><br><span class="line">            <span class="comment">#判断相同文件名文件</span></span><br><span class="line">            <span class="keyword">if</span> each_file <span class="keyword">in</span> file_l:</span><br><span class="line">                md5sum(each_file)</span><br><span class="line">                print(<span class="string">'%s存在重名文件'</span>%each_file)</span><br><span class="line">                print(<span class="string">'文件大小：%s'</span>%os.path.getsize(each_file))</span><br><span class="line">                print(<span class="string">"创建时间: %s"</span> % time.ctime(os.path.getctime(each_file)))</span><br><span class="line">                print(<span class="string">'位置是：%s'</span>%root)</span><br><span class="line">            file_l.append(each_file)</span><br><span class="line">        os.chdir(pwd)</span><br><span class="line">    <span class="comment">#提示存在相同内容文件的第一个遍历到的文件</span></span><br><span class="line">    <span class="keyword">for</span> k, v <span class="keyword">in</span> dup.items():</span><br><span class="line">        <span class="keyword">if</span> len(v) &gt; <span class="number">1</span>:</span><br><span class="line">            print(<span class="string">'%s存在相同内容文件'</span> % v[<span class="number">0</span>])</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">md5sum</span><span class="params">(filename, blocksize=<span class="number">500</span>)</span>:</span></span><br><span class="line">    hash = hashlib.md5()</span><br><span class="line">    <span class="keyword">with</span> open(filename, <span class="string">"rb"</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> block <span class="keyword">in</span> iter(<span class="keyword">lambda</span>: f.read(blocksize), <span class="string">b""</span>):</span><br><span class="line">            hash.update(block)</span><br><span class="line">    <span class="keyword">return</span> hash.hexdigest()</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    findsame(<span class="string">'test'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>更改其中的路径参数即可判断对应路径下的同名文件及相同内容文件。</p>
+<p>附:如果有什么疑问，或遇到什么问题可以通过评论或右下角的信息标志给我留言，我会及时回复。</p>
 
               
 
@@ -307,7 +314,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/项目//" class="article-tag-list-link color3">项目</a>
+        			<a href="/categories/脚本//" class="article-tag-list-link color3">脚本</a>
         		</li>
       		
 		</ul>
@@ -589,11 +596,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">脚本</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,19 +616,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,6 +633,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -824,7 +839,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
  <link rel="stylesheet" href="/./dist/APlayer.min.css">
  <div id="aplayer" style="z-index: 99999;"></div>
- <script src="/./dist/hls.min.js"></script>
  <script src="/./dist/APlayer.min.js"></script>
  <script src="/./dist/musicPlay.js"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"react":{"opacityDefault":0.7,"opacityOnHover":0.3},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>

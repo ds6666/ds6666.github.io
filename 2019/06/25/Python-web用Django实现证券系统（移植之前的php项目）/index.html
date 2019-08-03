@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/06/26/5d1319af18a6165712.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/27/5d143494a3c2a43007.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/27/5d1434e18409515489.png">
-<meta property="og:updated_time" content="2019-07-27T09:48:20.039Z">
+<meta property="og:updated_time" content="2019-08-03T08:28:54.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python web用Django实现证券系统（移植之前的php项目）">
 <meta name="twitter:description" content="Python web用Django实现证券系统（移植之前的php项目）">
@@ -86,6 +86,8 @@
 				<li><a href="/categories/项目/">项目</a></li>
 	        
 				<li><a href="/categories/手机科技/">手机科技</a></li>
+	        
+				<li><a href="/categories/脚本/">脚本</a></li>
 	        
 				<li><a href="/resume/">简历</a></li>
 	        
@@ -153,6 +155,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -175,15 +179,17 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 20%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 20%"><a href="/categories/项目/">项目</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/项目/">项目</a></li>
 		        
-					<li style="width: 20%"><a href="/categories/手机科技/">手机科技</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/手机科技/">手机科技</a></li>
 		        
-					<li style="width: 20%"><a href="/resume/">简历</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories/脚本/">脚本</a></li>
 		        
-					<li style="width: 20%"><a href="/liuyan/">留言板</a></li>
+					<li style="width: 16.666666666666668%"><a href="/resume/">简历</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/liuyan/">留言板</a></li>
 		        
 				</ul>
 			</nav>
@@ -245,7 +251,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://i.loli.net/2019/06/25/5d11d8109149975521.png" alt="米法老婆"></p>
-<h3 id="Python-web用Django实现证券系统（移植之前的php项目）"><a href="#Python-web用Django实现证券系统（移植之前的php项目）" class="headerlink" title="Python web用Django实现证券系统（移植之前的php项目）"></a>Python web用Django实现证券系统（移植之前的php项目）</h3><a id="more"></a>
+<h2 id="Python-web用Django实现证券系统（移植之前的php项目）"><a href="#Python-web用Django实现证券系统（移植之前的php项目）" class="headerlink" title="Python web用Django实现证券系统（移植之前的php项目）"></a>Python web用Django实现证券系统（移植之前的php项目）</h2><a id="more"></a>
 <p>之前我用php写过一个证券系统<a href="http://ds666.fun/2019/02/12/php-oracle%E5%AE%9E%E7%8E%B0%E8%AF%81%E5%88%B8%E7%B3%BB%E7%BB%9F+selenium%E6%A8%A1%E5%9D%97%E5%8A%A8%E6%80%81%E7%88%AC%E5%8F%96%E8%AF%81%E5%88%B8%E4%BF%A1%E6%81%AF/" target="_blank" rel="noopener">php+oracle实现证券系统+selenium模块动态爬取证券信息</a>，功能还算比较完善全面，学习了python web后，我又用Django模块，将其重构了一下，这里说一下方法及遇到的问题。<br>然后这里给出项目的源程序<a href="/download/Django 证券系统.zip">Django实现证券系统</a></p>
 <h5 id="一、关于Django"><a href="#一、关于Django" class="headerlink" title="一、关于Django"></a>一、关于Django</h5><p><a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>是用Python开发的一个免费开源的Web框架，可以用于快速搭建高性能，优雅的网站！<br>1.Django的特点：<br>强大的数据库功能：拥有强大的数据库操作接口（QuerySet API）,也能执行原生SQL<br>自带强大后台：网站拥有一个强大的后台，轻松管理内容。<br>优雅的网址：用正则匹配网址，传递到对应函数，随意定义。<br>模版系统：易扩展的模版系统，设计简易，代码，样式 分开设计，更容易管理。<br>缓存系统：与memcached，redis等缓存系统联用，更出色的表现，更快的加载速度。<br>国际化：完全支持多国语言应用，允许定义翻译的字符，轻松翻译成不同国际的语言。<br>Django目录结构：<br>urls.py：网址入口，关联到对应的Views.py中的一个函数，访问网址对应的函数。<br>views.py：处理用户发出的请求，从urls.py中对应过来，通过渲染templates中的网页可以将显示内容，比如登陆后的用户名，数据，输出到网页。<br>models.py：与数据库操作相关，存入或读取数据时用到这个<br>templates文件夹：views.py中的函数渲染templates中的HTML模版，得到动态内容网页，可以用缓存来提高速度。<br>admin.py：后台，可以用很少量的代码就拥有一个强大的后台。<br>settings.py：Django的全局设置，配置文件，比如DEBUG的开关，静态文件的位置设置等。<br>具体教程可详见<a href="https://www.runoob.com/django/django-tutorial.html" target="_blank" rel="noopener">Django菜鸟教程</a><br>安装Django：如果你已经有Python环境的情况下直接在cmd中运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Django</span><br></pre></td></tr></table></figure></p>
 <p>或者可以在pycharm中的settings-&gt;interpreter点击+号进行安装。<br>创建Django项目，可以在cmd中通过命令行创建(参见教程视频或菜鸟教程)，也可以在pycharm中直接创建Django项目，好处是直接就可运行，但是migrate配置还是要在命令行，结合着用吧。</p>
@@ -279,6 +285,7 @@
 <p>关于登录记录登录信息的处理(就是cookies)我是在全局设置一个空列表usr，然后每次登陆逻辑检测成功，就将登陆的对象user，append进去，然后如果在其他的地方需要用到它的信息就调用usr[-1]即为登陆对象。</p>
 <h5 id="四、在腾讯证券行情中心爬取证券信息"><a href="#四、在腾讯证券行情中心爬取证券信息" class="headerlink" title="四、在腾讯证券行情中心爬取证券信息"></a>四、在腾讯证券行情中心爬取证券信息</h5><p>爬虫部分较php那个项目基本没什么变化，只是新增了统计绘图，多线程，爬虫日志，并且把chrome的弹框隐藏了。具体见博客开头提到的php项目部分。</p>
 <p>最后具体的功能跟php那个效果几乎一样，展示功能图片在压缩包中的word文档说明书有介绍。</p>
+<p>附:如果有什么疑问，或遇到什么问题可以通过评论或右下角的信息标志给我留言，我会及时回复。</p>
 
               
 
@@ -462,7 +469,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-web用Django实现证券系统（移植之前的php项目）"><span class="toc-number">1.</span> <span class="toc-text">Python web用Django实现证券系统（移植之前的php项目）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、关于Django"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、关于Django</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、Django连接Oracle数据库配置"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、Django连接Oracle数据库配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、证券系统项目编写"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、证券系统项目编写</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四、在腾讯证券行情中心爬取证券信息"><span class="toc-number">1.0.4.</span> <span class="toc-text">四、在腾讯证券行情中心爬取证券信息</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-web用Django实现证券系统（移植之前的php项目）"><span class="toc-number">1.</span> <span class="toc-text">Python web用Django实现证券系统（移植之前的php项目）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、关于Django"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">一、关于Django</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、Django连接Oracle数据库配置"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">二、Django连接Oracle数据库配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、证券系统项目编写"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">三、证券系统项目编写</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四、在腾讯证券行情中心爬取证券信息"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">四、在腾讯证券行情中心爬取证券信息</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -650,11 +657,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">脚本</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -666,19 +677,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Sublime Text 3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -687,6 +694,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -885,7 +900,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
  <link rel="stylesheet" href="/./dist/APlayer.min.css">
  <div id="aplayer" style="z-index: 99999;"></div>
- <script src="/./dist/hls.min.js"></script>
  <script src="/./dist/APlayer.min.js"></script>
  <script src="/./dist/musicPlay.js"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"react":{"opacityDefault":0.7,"opacityOnHover":0.3},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
