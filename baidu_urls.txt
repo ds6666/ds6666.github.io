@@ -1,1 +1,1 @@
-http://www.ds666.fun/2019/08/02/批量导出微信语音消息为mp3并附python修改文件名脚本/
+http://www.ds666.fun/2019/08/07/Hexo使用Aplayer后目录跳转的bug/
