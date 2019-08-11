@@ -265,7 +265,7 @@
         <p><img src="https://i.loli.net/2019/07/26/5d3ab5711b17645389.png" alt="ZELDA"> </p>
 <h1 id="Python-web用Django开发一个完整的论坛-影评系统（附移动端）并通过Nginx-uWSGI部署"><a href="#Python-web用Django开发一个完整的论坛-影评系统（附移动端）并通过Nginx-uWSGI部署" class="headerlink" title="Python web用Django开发一个完整的论坛/影评系统（附移动端）并通过Nginx+uWSGI部署"></a>Python web用Django开发一个完整的论坛/影评系统（附移动端）并通过Nginx+uWSGI部署</h1><a id="more"></a>
 <p>上一篇博客写到如何在Debian linux系统下搭建nginx+uwsgi环境，并且在项目中还有一个Django开发的证券系统，本来打算将二者结合一下尝试部署一个后端用Django的web项目，后来想想还是要重新搞一个，毕竟证券系统那个只算是一个移植项目，只是合并了一下遗留Oracle数据库，并且较为浅薄的用了一下Django，通过更加深入的学习，我又弄了一个完全用Django开发，仅使用原生的sqlite数据库，更复杂的操作，并且在移动端方面采用前后端分离，及API技术来实现，最后通过Nginx+uWsgi部署到服务器上，即如果有付费的服务器就可上线的网站。<br>这里给出项目的源代码<a href="/download/Django firstsite.zip">firstsite</a></p>
-<h2 id="一、关于Django"><a href="#一、关于Django" class="headerlink" title="一、关于Django"></a>一、关于Django</h2><p>在之前的证券系统项目中有介绍，关于安装，目录结构，MTV模式等，详情参照<a href="http://ds666.fun/2019/06/25/Python-web%E7%94%A8Django%E5%AE%9E%E7%8E%B0%E8%AF%81%E5%88%B8%E7%B3%BB%E7%BB%9F%EF%BC%88%E7%A7%BB%E6%A4%8D%E4%B9%8B%E5%89%8D%E7%9A%84php%E9%A1%B9%E7%9B%AE%EF%BC%89/" target="_blank" rel="noopener">证券系统</a>。</p>
+<h2 id="一、关于Django"><a href="#一、关于Django" class="headerlink" title="一、关于Django"></a>一、关于Django</h2><p>在之前的证券系统项目中有介绍，关于安装，目录结构，MTV模式等，详情参照<a href="http://ds666.fun/2019/06/25/Python-web%E7%94%A8Django%E5%AE%9E%E7%8E%B0%E8%AF%81%E5%88%B8%E7%B3%BB%E7%BB%9F%EF%BC%88%E7%A7%BB%E6%A4%8D%E4%B9%8B%E5%89%8D%E7%9A%84php%E9%A1%B9%E7%9B%AE%EF%BC%89/">证券系统</a>。</p>
 <h2 id="二、前端页面-T-层，运用SemanticUI的css样式模板"><a href="#二、前端页面-T-层，运用SemanticUI的css样式模板" class="headerlink" title="二、前端页面(T)层，运用SemanticUI的css样式模板"></a>二、前端页面(T)层，运用SemanticUI的css样式模板</h2><p>1.<a href="https://semantic-ui.com/" target="_blank" rel="noopener">Semantic UI</a>是语义化的前端 UI 框架，包含 50 多个组件。<br>官方解释：Semantic允许开发人员快速构建漂亮的网站，简洁的HTML，直观的javascript和简化的调试，有助于使前端开发成为一种愉快的体验。语义是响应性设计，允许您的网站在多个设备上扩展。Semantic是生产就绪的，并且与React，Angular，Meteor和Ember等框架相结合，这意味着您可以将它与任何这些框架集成，以便与应用程序逻辑一起组织UI层。</p>
 <p>简单来说就是一个快速开发网页的框架，它有简洁美观大方的样式，并且使用起来非常的简单。</p>
 <h3 id="2-安装Semantic-UI"><a href="#2-安装Semantic-UI" class="headerlink" title="2.安装Semantic UI"></a>2.安装Semantic UI</h3><p>这里将以两种方式讲解如安装 Semantic-UI，其中第一种方式仅要求读者理解最基本的 HTML 语法。</p>
@@ -375,7 +375,7 @@
 <p>由于DRF需要支持对相同视图的基于会话和非会话的认证，因此它仅对经过身份验证的用户实施CSRF检查。这意味着只有经过身份验证的请求需要CSRF令牌，并且可以在没有CSRF令牌的情况下发送匿名请求。如果您使用带有SessionAuthentication的AJAX样式API，则需要为任何“不安全”HTTP方法调用(如PUT，PATCH，POST或DELETE请求)包含有效的CSRF令牌。<br>更改默认认证模式即可解决</p>
 <p>反正csrf这种东西是个坑，但它又能很好的防止跨站攻击。<br>然后可以通过判断用户是否登陆来返回不一样的数据，比如未登录只能查看五条内容，并通过判断用户身份来确认用户是否有删除修改某篇文章的权限。</p>
 <h3 id="5-通过localhost-8000-m-index来访问移动端界面"><a href="#5-通过localhost-8000-m-index来访问移动端界面" class="headerlink" title="5.通过localhost:8000/m/index来访问移动端界面"></a>5.通过localhost:8000/m/index来访问移动端界面</h3><p>需要说明的是这里的文章分类是通过前端筛选实现的，根据chozen的值不同来渲染出不同的文章。然后通过v-on:click来改变chozen的值。选择editors choice可以对文章进行加精和删除操作，注意只有文章的作者或管理员才可以删除相应的文章。点击右下角编写的图标可以实现文章的编写，封面为默认封面。</p>
-<h2 id="四、Nginx-uWsgi部署"><a href="#四、Nginx-uWsgi部署" class="headerlink" title="四、Nginx + uWsgi部署"></a>四、Nginx + uWsgi部署</h2><p>之前的博客介绍了如何进行环境的配置<a href="http://ds666.fun/2019/07/08/Debian-kali-linux-x64%E4%B8%8BPython-Django-Nginx-uWSGI%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_blank" rel="noopener">Debian kali linux x64下Python + Django + Nginx + uWSGI环境配置</a></p>
+<h2 id="四、Nginx-uWsgi部署"><a href="#四、Nginx-uWsgi部署" class="headerlink" title="四、Nginx + uWsgi部署"></a>四、Nginx + uWsgi部署</h2><p>之前的博客介绍了如何进行环境的配置<a href="http://ds666.fun/2019/07/08/Debian-kali-linux-x64%E4%B8%8BPython-Django-Nginx-uWSGI%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Debian kali linux x64下Python + Django + Nginx + uWSGI环境配置</a></p>
 <h3 id="1-运行uwsgi命令测试django项目"><a href="#1-运行uwsgi命令测试django项目" class="headerlink" title="1.运行uwsgi命令测试django项目"></a>1.运行uwsgi命令测试django项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uwsgi --http :8888 --chdir firstsite/  --module firstsite.wsgi:application --static-map=/static=static</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">uwsgi</span><br><span class="line">    --chdir=/path/to/your/project \    #用于指定网站根目录</span><br><span class="line">    --module=mysite.wsgi:application \ #用于指定你的Django项目地址</span><br><span class="line">    --env DJANGO_SETTINGS_MODULE=mysite.settings \</span><br><span class="line">    --master --pidfile=/tmp/project-master.pid \</span><br><span class="line">    --socket=127.0.0.1:49152 \      # 可以ip地址，也可以是文件 </span><br><span class="line">    --processes=5 \                 # 进程数量</span><br><span class="line">    --uid=1000 --gid=2000 \         # 如果是root用户，uwsgi可以有删除权限</span><br><span class="line">    --harakiri=20 \                 # 一个请求超时时间</span><br><span class="line">    --max-requests=5000 \           # 一个工作进程最大请求数</span><br><span class="line">    --vacuum \                      # 退出时清楚环境</span><br><span class="line">    --home=/path/to/virtual/env \   # virtualenv的路径</span><br><span class="line">    --static                        # 做一个映射,指定静态文件</span><br><span class="line">    --http                          # 这个就和runserver一样指定IP 端口</span><br><span class="line">    --daemonize=/var/log/uwsgi/yourproject.log      # 日志</span><br></pre></td></tr></table></figure>
 <h3 id="2-创建uwsgi配置文件"><a href="#2-创建uwsgi配置文件" class="headerlink" title="2.创建uwsgi配置文件"></a>2.创建uwsgi配置文件</h3><p>在项目根目录下创建mysite_uwsgi文件夹，里面创建uwsgi.ini文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line"># 项目目录</span><br><span class="line">chdir=firstsite/</span><br><span class="line"># 指定项目的application</span><br><span class="line">module=firstsite.wsgi:application</span><br><span class="line"># 进程个数</span><br><span class="line">processes=6</span><br><span class="line"># 启动uwsgi的用户名和用户组</span><br><span class="line">uid=root</span><br><span class="line">gid=root</span><br><span class="line"># 启用主进程</span><br><span class="line">master=true</span><br><span class="line"># 自动移除unix Socket和pid文件当服务停止的时候</span><br><span class="line">vacuum=true</span><br><span class="line"># 序列化接受的内容，如果可能的话</span><br><span class="line"># thunder-lock=true</span><br><span class="line"># 启用线程</span><br><span class="line"># enable-threads=true</span><br><span class="line"># 设置自中断时间</span><br><span class="line">harakiri=30</span><br><span class="line"># 设置缓冲</span><br><span class="line"># post-buffering=4096</span><br><span class="line"># 设置日志目录</span><br><span class="line">pidfile=firstsite/mysite_uwsgi/uwsgi.pid</span><br><span class="line">daemonize=firstsite/mysite_uwsgi/uwsgi.log</span><br><span class="line"># 指定sock的文件路径</span><br><span class="line"># socket=firstsite/mysite_uwsgi/uwsgi.sock</span><br><span class="line">socket= 127.0.0.1:8888</span><br></pre></td></tr></table></figure></p>
@@ -778,11 +778,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -790,11 +786,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -822,19 +822,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -846,6 +846,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
               </li>
              
@@ -854,11 +858,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">手机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xposed</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">太极</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">手游辅助</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防撤回</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动抢红包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">实用软件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -867,10 +899,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">root</a>
               </li>
              
               <li class="article-tag-list-item">

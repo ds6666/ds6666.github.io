@@ -251,7 +251,7 @@
       
         <p><img src="https://i.loli.net/2019/06/28/5d15a5b609d2336882.png" alt="痴呆"></p>
 <h3 id="hexo-添加live2d的一个坑（望新人注意）"><a href="#hexo-添加live2d的一个坑（望新人注意）" class="headerlink" title="hexo 添加live2d的一个坑（望新人注意）"></a>hexo 添加live2d的一个坑（望新人注意）</h3><a id="more"></a>
-<p>首先说一下我之前有一篇综合优化博客的文章<a href="http://ds666.fun/2019/01/25/%E6%90%AD%E5%8D%9A%E5%AE%A2%E5%85%A8%E8%BF%87%E7%A8%8B%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E7%BE%8E%E5%8C%96/" target="_blank" rel="noopener">搭博客全过程及遇到的问题和美化</a>，这个live2d的坑我就踩了，我把错误的示范用删除线划掉了，以此引以为戒。</p>
+<p>首先说一下我之前有一篇综合优化博客的文章<a href="http://ds666.fun/2019/01/25/%E6%90%AD%E5%8D%9A%E5%AE%A2%E5%85%A8%E8%BF%87%E7%A8%8B%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E7%BE%8E%E5%8C%96/">搭博客全过程及遇到的问题和美化</a>，这个live2d的坑我就踩了，我把错误的示范用删除线划掉了，以此引以为戒。</p>
 <p>正常的配置步骤跟那里面介绍的基本一样，出错的位置在于我是在yilia主题文件夹下的_config.yml中添加的各项配置，而且还在那巴拉巴拉的推荐你们也在这加，我下的模型是hijiki，一个黑猫，结果出来的是shizuku，一个课桌小女孩，我以为是作者的锅，弄串了。。。结果是我配置的问题，不仅如此，我调透明度大小等属性的时候也不尽好使，最最重要的一点是，我把mobile下的show调为false，结果手机端仍会显示，显示就显示吧，我调小一点总行了吧，结果发现调整大小也失效了，我到这时还是以为是作者的锅，有bug，手机就一直带着右下角的大model，一直在找解决办法，终于今天让我明白了，是要在blog根目录下配置，我寻思在主题里面配置，以方便以后换主题，在调整新的布局。结果困扰了我许久啊！</p>
 <h5 id="附：blog配置DaoVoice在线联系功能"><a href="#附：blog配置DaoVoice在线联系功能" class="headerlink" title="附：blog配置DaoVoice在线联系功能"></a>附：blog配置DaoVoice在线联系功能</h5><p>当有用户在网页上给你留言后会通过邮件或者微信通知你，可以及时的解答用户的疑问。这就是在线聊天功能的作用。<br>相关产品有 Tidio、 TalkJS、Intercom、tawk.to、 DaoVoice等，使用体验都很好，交互界面也很干净别致。这里以DaoVoice为例：<br>首先到<a href="http://dashboard.daovoice.io/get-started?invite_code=d1b06a58" target="_blank" rel="noopener">DaoVoice</a>上注册一个账号,注册完成后会得到一个app_id，获取appid的步骤如下图所示:<br><img src="https://i.loli.net/2019/06/28/5d15b6969353358352.png" alt="appid"></p>
 <p>在head.ejs中head标签中添加如下代码<br>yilia\layout\_partial\head.ejs<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.daovoice)&#123; %&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">i,s,o,g,r,a,m</span>)</span>&#123;i[<span class="string">"DaoVoiceObject"</span>]=r;i[r]=i[r]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;(i[r].q=i[r].q||[]).push(<span class="built_in">arguments</span>)&#125;,i[r].l=<span class="number">1</span>*<span class="keyword">new</span> <span class="built_in">Date</span>();a=s.createElement(o),m=s.getElementsByTagName(o)[<span class="number">0</span>];a.async=<span class="number">1</span>;a.src=g;a.charset=<span class="string">"utf-8"</span>;m.parentNode.insertBefore(a,m)&#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">"script"</span>,(<span class="string">'https:'</span> == <span class="built_in">document</span>.location.protocol ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">"//widget.daovoice.io/widget/c08e4b3d.js"</span>,<span class="string">"daovoice"</span>)</span><br><span class="line">    daovoice(<span class="string">'init'</span>, &#123;</span><br><span class="line">        app_id: <span class="string">"&lt;%- theme.daovoice_app_id %&gt;"</span></span><br><span class="line">      &#125;);</span><br><span class="line">    daovoice(<span class="string">'update'</span>);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">  &lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -578,11 +578,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,11 +586,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,19 +622,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,6 +646,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
               </li>
              
@@ -654,11 +658,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">手机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xposed</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">太极</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">手游辅助</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防撤回</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动抢红包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">实用软件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,10 +699,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">root</a>
               </li>
              
               <li class="article-tag-list-item">

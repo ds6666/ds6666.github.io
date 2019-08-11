@@ -251,7 +251,7 @@
         <p><img src="https://i.loli.net/2019/08/07/a3xs5RbjUeFmhKH.png" alt="七夕接活"></p>
 <h1 id="Hexo使用Aplayer后目录跳转的bug"><a href="#Hexo使用Aplayer后目录跳转的bug" class="headerlink" title="Hexo使用Aplayer后目录跳转的bug"></a>Hexo使用Aplayer后目录跳转的bug</h1><a id="more"></a>
 <p>首先祝各位情侣七夕节过得快乐！(话语中充满着酸意)，然后今天微信发不了520红包(详情可见微博热搜)，但是可以转账(不谢)，所以封面接活的配图也是转账。</p>
-<p>然后开始这篇文章的正题，前几天我发了一篇<a href="http://ds666.fun/2019/07/26/Python-web%E7%94%A8Django%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E8%AE%BA%E5%9D%9B-%E5%BD%B1%E8%AF%84%E7%B3%BB%E7%BB%9F%EF%BC%88%E9%99%84%E7%A7%BB%E5%8A%A8%E7%AB%AF%EF%BC%89%E5%B9%B6%E9%80%9A%E8%BF%87Nginx-uWSGI%E9%83%A8%E7%BD%B2/" target="_blank" rel="noopener">Python web用Django开发一个完整的论坛/影评系统（附移动端）并通过Nginx+uWSGI部署</a>的项目博客，由于篇幅很长，所以我尝试使用了目录功能，值得一提的是yilia主题的目录功能从一开始更新博客的时候就一直被我忽略了，一是没有添加目录的好习惯，二也是我写的博客基本也都不是很长，没有添加目录的必要，所以也就一直没用。</p>
+<p>然后开始这篇文章的正题，前几天我发了一篇<a href="http://ds666.fun/2019/07/26/Python-web%E7%94%A8Django%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E8%AE%BA%E5%9D%9B-%E5%BD%B1%E8%AF%84%E7%B3%BB%E7%BB%9F%EF%BC%88%E9%99%84%E7%A7%BB%E5%8A%A8%E7%AB%AF%EF%BC%89%E5%B9%B6%E9%80%9A%E8%BF%87Nginx-uWSGI%E9%83%A8%E7%BD%B2/">Python web用Django开发一个完整的论坛/影评系统（附移动端）并通过Nginx+uWSGI部署</a>的项目博客，由于篇幅很长，所以我尝试使用了目录功能，值得一提的是yilia主题的目录功能从一开始更新博客的时候就一直被我忽略了，一是没有添加目录的好习惯，二也是我写的博客基本也都不是很长，没有添加目录的必要，所以也就一直没用。</p>
 <h2 id="一-目录功能的使用"><a href="#一-目录功能的使用" class="headerlink" title="一.目录功能的使用"></a>一.目录功能的使用</h2><h3 id="1-配置目录功能"><a href="#1-配置目录功能" class="headerlink" title="1.配置目录功能"></a>1.配置目录功能</h3><p>要想使用目录的功能需要先在 themes/yilia/_config.yml文件中进行配置<br><img src="https://i.loli.net/2019/08/07/EZUzcbmC34AW6yP.png" alt="目录配置"><br>通过注释可以很好的理解各种配置所对应的功能<br>其中toc_hide_index选项设置为false的话，会在你对应的目录前面添加黑色的小标题例如1.1,1.1.1,1.2之类的，设置为true则会隐藏。</p>
 <h3 id="2-文章中使用目录功能"><a href="#2-文章中使用目录功能" class="headerlink" title="2.文章中使用目录功能"></a>2.文章中使用目录功能</h3><p>根据你对应的设定，我的设置为1，所以需要有目录的文章中前面要加入toc: true字样。设置为2的可不加。<br>然后它会根据你markdown的设置标题的语法<br>类 Atx 形式则是在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 这是 H1</span><br><span class="line"></span><br><span class="line">## 这是 H2</span><br><span class="line"></span><br><span class="line">###### 这是 H6</span><br></pre></td></tr></table></figure></p>
 <p>来自动识别每一阶的标题同时也对应着文章中的字体加粗变大</p>
@@ -297,7 +297,7 @@
 </ul>
 <p>之后就可以插入一些html/css/js渲染的页面，这里给出我基于<a href="https://www.ddosi.com/007.html" target="_blank" rel="noopener">黑客数字雨特效</a>修改的的代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"> </span></span><br><span class="line"><span class="css">    *&#123;<span class="attribute">margin</span>:<span class="number">0</span>;&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">canvas</span>&#123;<span class="attribute">background</span>:transparent;&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">body</span>&#123;<span class="attribute">overflow</span>:hidden;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">width</span>=<span class="string">"0"</span> <span class="attr">height</span>=<span class="string">"0"</span> <span class="attr">id</span>=<span class="string">"canvas0"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> canvas=<span class="built_in">document</span>.getElementById(<span class="string">"canvas0"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="comment">//获取权限</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> ctx=canvas.getContext(<span class="string">"2d"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="comment">//获取屏幕信息</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> screenInformation= <span class="built_in">window</span>.screen;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//控制台输出屏幕信息</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(screenInformation);</span></span><br><span class="line"><span class="javascript">        <span class="comment">//设置屏幕信息</span></span></span><br><span class="line"><span class="undefined">        canvas.width=(screenInformation.width/3)*2;</span></span><br><span class="line"><span class="undefined">        canvas.height=screenInformation.height;</span></span><br><span class="line"><span class="undefined">        </span></span><br><span class="line"><span class="javascript">        <span class="comment">//字体大小</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> fontSize=<span class="number">20</span>;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//字体</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> str=<span class="string">"01"</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> cols=<span class="built_in">Math</span>.floor((screenInformation.width)/fontSize);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> X =[];</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;cols;i++)&#123;</span></span><br><span class="line"><span class="undefined">            X.push(0);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> gradient=ctx.createLinearGradient(<span class="number">0</span>,<span class="number">0</span>,screenInformation.width,screenInformation.height);</span></span><br><span class="line"><span class="javascript">        gradient.addColorStop(<span class="string">"0"</span>,<span class="string">"#ff0099"</span>);</span></span><br><span class="line"><span class="javascript">        gradient.addColorStop(<span class="string">"0.25"</span>,<span class="string">"#00ccff"</span>);</span></span><br><span class="line"><span class="javascript">        gradient.addColorStop(<span class="string">"0.5"</span>,<span class="string">"#ffff00"</span>);</span></span><br><span class="line"><span class="javascript">        gradient.addColorStop(<span class="string">"0.75"</span>,<span class="string">"#cc66cc"</span>);</span></span><br><span class="line"><span class="javascript">        gradient.addColorStop(<span class="string">"0.1"</span>,<span class="string">"#00ccff"</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">matrix</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            ctx.fillStyle=<span class="string">"rgba(0,0,0,0.06)"</span>;</span></span><br><span class="line"><span class="undefined">            </span></span><br><span class="line"><span class="javascript">            <span class="comment">//清除画布</span></span></span><br><span class="line"><span class="undefined">            ctx.fillRect(0,0,canvas.width,canvas.height);</span></span><br><span class="line"><span class="javascript">            <span class="comment">//设置字体颜色</span></span></span><br><span class="line"><span class="undefined">            ctx.fillStyle=gradient;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;cols;i++)&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> y=X[i]*fontSize;</span></span><br><span class="line"><span class="javascript">                ctx.fillText(str[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*str.length)],i*fontSize,y);</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(y &gt;= screenInformation.height&amp;&amp;<span class="built_in">Math</span>.random()&gt;<span class="number">0.99</span>)&#123;</span></span><br><span class="line"><span class="undefined">                    X[i]=0;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">                X[i]++;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        setInterval(matrix,30);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>在原版的基础上我将宽度改为原来的2/3，因为直接套用会出现粒子雨一直延伸到屏幕最右侧及超出文章所框定的范围的情况。然后通过调整ctx.fillStyle=”rgba(0,0,0,0.06)”;可以改变粒子的数量以及背景的明暗程度，具体可自己尝试。<br>唯一出现的问题是移动端的兼容，由于宽度改为了2/3所以移动端页面也呈现为2/3，变得很窄，体验不是很好，暂时还没想到解决办法，如果有大神解决了，请与我联系，谢谢！</p>
-<p>最终效果见<a href="http://ds666.fun/resume/" target="_blank" rel="noopener">博客简历页面</a>，可能是简历模板到期所以简历的外链失效了。<br>关于这里的其它炫酷页面我还没有尝试，如有需要可以自行引用调整，弄好的可以发出来联系我交流一下。<br>然后这里还有一个<a href="/download/樱花特效.zip">樱花飘落的特效</a></p>
+<p>最终效果见<a href="http://ds666.fun/resume/">博客简历页面</a>，可能是简历模板到期所以简历的外链失效了。<br>关于这里的其它炫酷页面我还没有尝试，如有需要可以自行引用调整，弄好的可以发出来联系我交流一下。<br>然后这里还有一个<a href="/download/樱花特效.zip">樱花飘落的特效</a></p>
 <p>最后感谢前辈们的美化及解决方案<br>引用链接：<br><a href="https://blog.wangriyu.wang/2018/06-Aplayer.html" target="_blank" rel="noopener">使用Aplayer导致博客目录跳转失效</a><br><a href="http://lawlite.me/2017/04/17/Hexo-yilia%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91/" target="_blank" rel="noopener">Hexo+yilia主题实现文章目录和添加视频 </a><br><a href="https://www.ddosi.com/h/" target="_blank" rel="noopener">html特效 代码汇总 html炫酷页面赏析</a></p>
 <p>附:如果有什么疑问，或遇到什么问题可以通过评论或右下角的信息标志给我留言，我会及时回复。</p>
 
@@ -417,6 +417,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/08/11/Xposed框架的安装与使用-root版-非root版/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Xposed框架的安装与使用(root版/非root版)
+        
+      </div>
+    </a>
   
   
     <a href="/2019/08/02/批量导出微信语音消息为mp3并附python修改文件名脚本/" id="article-nav-older" class="article-nav-link-wrap">
@@ -623,11 +632,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,11 +640,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,19 +676,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,6 +700,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
               </li>
              
@@ -699,11 +712,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">手机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xposed</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">太极</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">手游辅助</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防撤回</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动抢红包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">实用软件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -712,10 +753,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">root</a>
               </li>
              
               <li class="article-tag-list-item">

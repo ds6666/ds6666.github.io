@@ -10,7 +10,7 @@
   <title>Python web用Django实现证券系统（移植之前的php项目） | 韶华尐沐</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Python web用Django实现证券系统（移植之前的php项目）">
-<meta name="keywords" content="python,爬虫,oracle,selenium,web,Django">
+<meta name="keywords" content="oracle,python,爬虫,selenium,web,Django">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python web用Django实现证券系统（移植之前的php项目）">
 <meta property="og:url" content="http://ds666.fun/2019/06/25/Python-web用Django实现证券系统（移植之前的php项目）/index.html">
@@ -252,7 +252,7 @@
       
         <p><img src="https://i.loli.net/2019/06/25/5d11d8109149975521.png" alt="米法老婆"></p>
 <h2 id="Python-web用Django实现证券系统（移植之前的php项目）"><a href="#Python-web用Django实现证券系统（移植之前的php项目）" class="headerlink" title="Python web用Django实现证券系统（移植之前的php项目）"></a>Python web用Django实现证券系统（移植之前的php项目）</h2><a id="more"></a>
-<p>之前我用php写过一个证券系统<a href="http://ds666.fun/2019/02/12/php-oracle%E5%AE%9E%E7%8E%B0%E8%AF%81%E5%88%B8%E7%B3%BB%E7%BB%9F+selenium%E6%A8%A1%E5%9D%97%E5%8A%A8%E6%80%81%E7%88%AC%E5%8F%96%E8%AF%81%E5%88%B8%E4%BF%A1%E6%81%AF/" target="_blank" rel="noopener">php+oracle实现证券系统+selenium模块动态爬取证券信息</a>，功能还算比较完善全面，学习了python web后，我又用Django模块，将其重构了一下，这里说一下方法及遇到的问题。<br>然后这里给出项目的源程序<a href="/download/Django 证券系统.zip">Django实现证券系统</a></p>
+<p>之前我用php写过一个证券系统<a href="http://ds666.fun/2019/02/12/php-oracle%E5%AE%9E%E7%8E%B0%E8%AF%81%E5%88%B8%E7%B3%BB%E7%BB%9F+selenium%E6%A8%A1%E5%9D%97%E5%8A%A8%E6%80%81%E7%88%AC%E5%8F%96%E8%AF%81%E5%88%B8%E4%BF%A1%E6%81%AF/">php+oracle实现证券系统+selenium模块动态爬取证券信息</a>，功能还算比较完善全面，学习了python web后，我又用Django模块，将其重构了一下，这里说一下方法及遇到的问题。<br>然后这里给出项目的源程序<a href="/download/Django 证券系统.zip">Django实现证券系统</a></p>
 <h5 id="一、关于Django"><a href="#一、关于Django" class="headerlink" title="一、关于Django"></a>一、关于Django</h5><p><a href="https://www.djangoproject.com/" target="_blank" rel="noopener">Django</a>是用Python开发的一个免费开源的Web框架，可以用于快速搭建高性能，优雅的网站！<br>1.Django的特点：<br>强大的数据库功能：拥有强大的数据库操作接口（QuerySet API）,也能执行原生SQL<br>自带强大后台：网站拥有一个强大的后台，轻松管理内容。<br>优雅的网址：用正则匹配网址，传递到对应函数，随意定义。<br>模版系统：易扩展的模版系统，设计简易，代码，样式 分开设计，更容易管理。<br>缓存系统：与memcached，redis等缓存系统联用，更出色的表现，更快的加载速度。<br>国际化：完全支持多国语言应用，允许定义翻译的字符，轻松翻译成不同国际的语言。<br>Django目录结构：<br>urls.py：网址入口，关联到对应的Views.py中的一个函数，访问网址对应的函数。<br>views.py：处理用户发出的请求，从urls.py中对应过来，通过渲染templates中的网页可以将显示内容，比如登陆后的用户名，数据，输出到网页。<br>models.py：与数据库操作相关，存入或读取数据时用到这个<br>templates文件夹：views.py中的函数渲染templates中的HTML模版，得到动态内容网页，可以用缓存来提高速度。<br>admin.py：后台，可以用很少量的代码就拥有一个强大的后台。<br>settings.py：Django的全局设置，配置文件，比如DEBUG的开关，静态文件的位置设置等。<br>具体教程可详见<a href="https://www.runoob.com/django/django-tutorial.html" target="_blank" rel="noopener">Django菜鸟教程</a><br>安装Django：如果你已经有Python环境的情况下直接在cmd中运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Django</span><br></pre></td></tr></table></figure></p>
 <p>或者可以在pycharm中的settings-&gt;interpreter点击+号进行安装。<br>创建Django项目，可以在cmd中通过命令行创建(参见教程视频或菜鸟教程)，也可以在pycharm中直接创建Django项目，好处是直接就可运行，但是migrate配置还是要在命令行，结合着用吧。</p>
 <p>2.Django的MTV模式：<br>所谓的MVC就是把Web应用分成模型（M），控制器（C）和视图（V）三层，他们之间以一种插件式的、松耦合的方式连接在一起，模型负责业务对象和数据库的映射（ORM），视图负责与用户的交互（页面），控制器接受用户的输入调用模型和视图完成用户的请求。<br>Django的MTV模式本质上和MVC是一样的，也是为了各组件间的松耦合关系，只是定义上有些许不同，Django的MTV分别是指：<br>M  代表模型（Model）：负责业务对象和数据库的关系映射（ORM）。<br>T  代表模板（Tempalte）：负责如何把页面展示给用户（html）。<br>V  代表视图（View）：负责业务逻辑，并在适当的时候调用Model和Template。<br>除了以上三层之外，还需要一个URL分发器，它的作用是将一个个的页面请求分发给不同的View处理，View再调用相应的Model和Template，MTV的响应模式如下所示：</p>
@@ -330,15 +330,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -645,11 +645,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,11 +653,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">脚本</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,19 +689,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">微信</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -713,6 +713,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
               </li>
              
@@ -721,11 +725,39 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+                <a href="javascript:void(0)" class="js-tag color2">Django</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Django</a>
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">手机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">xposed</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">太极</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">手游辅助</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防撤回</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">自动抢红包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">实用软件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,10 +766,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">人脸识别</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">root</a>
               </li>
              
               <li class="article-tag-list-item">
