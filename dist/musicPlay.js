@@ -46,7 +46,7 @@ const ap = new APlayer({
         {
             name: '两两相忘',
             artist: '曲肖冰',
-            url: 'http://fs.open.kugou.com/de3dd2d319d7bdd1eeaf810a9fb4f964/5d454967/G156/M0B/08/19/3A0DAFyn_bCAXUspAC9hjdWSpsk161.mp3',
+            url: 'http://fs.open.kugou.com/f65506688492ddf79467527889285454/5d5e1e22/G156/M0B/08/19/3A0DAFyn_bCAXUspAC9hjdWSpsk161.mp3',
             cover: 'http://p1.music.126.net/5F-eackmyizq4kAt7SEBuQ==/109951163975909720.jpg',
             theme: '#46718b'
         }
