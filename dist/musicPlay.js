@@ -2,7 +2,7 @@ const ap = new APlayer({
     container: document.getElementById('aplayer'),
     // mini: false,
     fixed: true,//吸底模式
-    autoplay: true,//默认是否自动播放
+    autoplay: false,//默认是否自动播放
     theme: '#FADFA3',
     loop: 'all',
     order: 'random',
@@ -39,15 +39,15 @@ const ap = new APlayer({
 		{
             name: '起风了',
             artist: '买辣椒也用券',
-            url: 'http://sc1.111ttt.cn/2018/1/03/13/396131213056.mp3',
+            url: 'http://music.163.com/song/media/outer/url?id=1330348068.mp3',
             cover: 'http://p1.music.126.net/diGAyEmpymX8G7JcnElncQ==/109951163699673355.jpg',
 	        theme: '#46718b'
         },
         {
-            name: '两两相忘',
-            artist: '曲肖冰',
-            url: 'http://fs.open.kugou.com/f65506688492ddf79467527889285454/5d5e1e22/G156/M0B/08/19/3A0DAFyn_bCAXUspAC9hjdWSpsk161.mp3',
-            cover: 'http://p1.music.126.net/5F-eackmyizq4kAt7SEBuQ==/109951163975909720.jpg',
+            name: '泼墨漓江',
+            artist: '泠鸢yousa',
+            url: 'http://music.163.com/song/media/outer/url?id=454905890.mp3',
+            cover: 'http://p2.music.126.net/GULe52JbCtVW0vjXZ1o2yw==/109951162817808719.jpg',
             theme: '#46718b'
         }
     ]
