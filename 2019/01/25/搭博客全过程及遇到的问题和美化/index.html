@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/01/29/5c4fdacd81032.png">
 <meta property="og:image" content="https://i.loli.net/2019/01/29/5c4fdb13c7b7b.png">
 <meta property="og:image" content="https://i.loli.net/2019/01/29/5c4fdb48d1013.png">
-<meta property="og:updated_time" content="2019-06-28T05:43:27.842Z">
+<meta property="og:updated_time" content="2020-04-04T04:32:55.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭博客全过程及遇到的问题和美化">
 <meta name="twitter:description" content="博客搭建">
@@ -281,7 +281,7 @@
 <p>在blog下的<del>或者yilia(推荐)下的</del>_config.yml文件添加配置(一定要在blog下的配置！！！)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true              # 是否开启</span><br><span class="line">  scriptFrom: local         # 默认</span><br><span class="line">  pluginRootPath: live2dw/  # 插件在站点上的根目录(相对路径)</span><br><span class="line">  pluginJsPath: lib/        # 脚本文件相对与插件根目录路径</span><br><span class="line">  pluginModelPath: assets/  # 模型文件相对与插件根目录路径</span><br><span class="line">  # scriptFrom: jsdelivr    # jsdelivr CDN</span><br><span class="line">  # scriptFrom: unpkg       # unpkg CDN</span><br><span class="line">  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko # 调用模型名，必须要先下载</span><br><span class="line">  display:</span><br><span class="line">    position: right         # 在博客的左边还是右边显示</span><br><span class="line">    width: 150              # 边框宽度</span><br><span class="line">    height: 300             # 边框高度</span><br><span class="line">  mobile:</span><br><span class="line">    show: true              # 是否在手机上显示</span><br><span class="line">    # use: wanko            # 博客根目录/live2d_models/ 下的目录名</span><br><span class="line">    # use: ./wives/wanko    # 相对于博客根目录的路径</span><br><span class="line">    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url</span><br></pre></td></tr></table></figure>
 <p>详细配置见<a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">文档</a>下的细节设置和常规设置。<br>hexo g，hexo d重新部署即可看到效果</p>
-<h2 id="文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等"><a href="#文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等" class="headerlink" title="文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等"></a>文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等</h2><p>访问量的统计都是基于<a href="http://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>。<br>在yilia\layout\_partial\post目录下创建word.ejs文件：</p>
+<h2 id="文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等"><a href="#文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等" class="headerlink" title="文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等"></a>文章中添加字数，阅读时间，访问量及页脚添加网站运行时间，浏览量等</h2><p>访问量的统计都是基于<a href="https://busuanzi.ibruce.info/" target="_blank" rel="noopener">不蒜子</a>。<br>在yilia\layout\_partial\post目录下创建word.ejs文件：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top:10px;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-time"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-icon"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-keyboard-o"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-text"</span>&gt;</span>  字数统计: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">wordcount</span>(<span class="attr">post.content</span>) %&gt;</span>字<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-time"</span>&gt;</span></span><br><span class="line">      &amp;nbsp; | &amp;nbsp;</span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-icon"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-hourglass-half"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-text"</span>&gt;</span>  阅读时长: <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-count"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">min2read</span>(<span class="attr">post.content</span>) %&gt;</span>分<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (!<span class="attr">is_home</span>() &amp;&amp; <span class="attr">is_post</span>()) &#123; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_page_pv"</span>&gt;</span></span><br><span class="line">          &amp;nbsp; | &amp;nbsp;  本文总阅读量: <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_page_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> 次</span><br><span class="line">        <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>然后在 themes/yilia/layout/_partial/article.ejs中</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">post</span>/<span class="attr">title</span>', &#123;<span class="attr">class_name:</span> '<span class="attr">article-title</span>'&#125;) %&gt;</span></span><br></pre></td></tr></table></figure>
@@ -495,7 +495,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 东 尐
+    		&copy; 2020 东 尐
             <br>
             <span><a href="http://www.beian.miit.gov.cn/">黑ICP备19003565号</a>
             </span>
@@ -639,14 +639,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -655,15 +647,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -672,6 +664,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
               <li class="article-tag-list-item">
