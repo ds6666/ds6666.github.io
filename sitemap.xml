@@ -570,6 +570,13 @@
   </url>
   
   <url>
+    <loc>http://ds6666.fun/tags/%E8%BF%87%E6%B8%A1/</loc>
+    <lastmod>2024-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://ds6666.fun/tags/linux/</loc>
     <lastmod>2024-04-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -592,13 +599,6 @@
   
   <url>
     <loc>http://ds6666.fun/tags/bs4/</loc>
-    <lastmod>2024-04-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ds6666.fun/tags/%E8%BF%87%E6%B8%A1/</loc>
     <lastmod>2024-04-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
