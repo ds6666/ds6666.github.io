@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/08/07/3asp1ZYM6nN7Igm.png">
 <meta property="og:image" content="https://i.loli.net/2019/08/07/a46D5ptHCwxYh2V.png">
 <meta property="article:published_time" content="2019-08-07T07:06:38.000Z">
-<meta property="article:modified_time" content="2024-04-15T04:18:47.345Z">
+<meta property="article:modified_time" content="2024-04-18T11:08:48.451Z">
 <meta property="article:author" content="东 尐">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="yilia">
@@ -249,7 +249,7 @@
 <h1 id="Hexo使用Aplayer后目录跳转的bug"><a href="#Hexo使用Aplayer后目录跳转的bug" class="headerlink" title="Hexo使用Aplayer后目录跳转的bug"></a>Hexo使用Aplayer后目录跳转的bug</h1><span id="more"></span>
 <p>首先祝各位情侣七夕节过得快乐！(话语中充满着酸意)，然后今天微信发不了520红包(详情可见微博热搜)，但是可以转账(不谢)，所以封面接活的配图也是转账。</p>
 <p>然后开始这篇文章的正题，前几天我发了一篇<a href="/2019/07/26/Python-web%E7%94%A8Django%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84%E8%AE%BA%E5%9D%9B-%E5%BD%B1%E8%AF%84%E7%B3%BB%E7%BB%9F%EF%BC%88%E9%99%84%E7%A7%BB%E5%8A%A8%E7%AB%AF%EF%BC%89%E5%B9%B6%E9%80%9A%E8%BF%87Nginx-uWSGI%E9%83%A8%E7%BD%B2/">Python web用Django开发一个完整的论坛/影评系统（附移动端）并通过Nginx+uWSGI部署</a>的项目博客，由于篇幅很长，所以我尝试使用了目录功能，值得一提的是yilia主题的目录功能从一开始更新博客的时候就一直被我忽略了，一是没有添加目录的好习惯，二也是我写的博客基本也都不是很长，没有添加目录的必要，所以也就一直没用。</p>
-<h2 id="一-目录功能的使用"><a href="#一-目录功能的使用" class="headerlink" title="一.目录功能的使用"></a>一.目录功能的使用</h2><h3 id="1-配置目录功能"><a href="#1-配置目录功能" class="headerlink" title="1.配置目录功能"></a>1.配置目录功能</h3><p>要想使用目录的功能需要先在 themes/yilia/_config.yml文件中进行配置<br><img src="https://i.loli.net/2019/08/07/EZUzcbmC34AW6yP.png" alt="目录配置"><br>通过注释可以很好的理解各种配置所对应的功能<br>其中toc_hide_index选项设置为false的话，会在你对应的目录前面添加黑色的小标题例如1.1,1.1.1,1.2之类的，设置为true则会隐藏。</p>
+<h2 id="一-目录功能的使用"><a href="#一-目录功能的使用" class="headerlink" title="一.目录功能的使用"></a>一.目录功能的使用</h2><h3 id="1-配置目录功能"><a href="#1-配置目录功能" class="headerlink" title="1.配置目录功能"></a>1.配置目录功能</h3><p>要想使用目录的功能需要先在 <code>themes\yilia\_config.yml</code>文件中进行配置<br><img src="https://i.loli.net/2019/08/07/EZUzcbmC34AW6yP.png" alt="目录配置"><br>通过注释可以很好的理解各种配置所对应的功能<br>其中toc_hide_index选项设置为false的话，会在你对应的目录前面添加黑色的小标题例如1.1,1.1.1,1.2之类的，设置为true则会隐藏。</p>
 <h3 id="2-文章中使用目录功能"><a href="#2-文章中使用目录功能" class="headerlink" title="2.文章中使用目录功能"></a>2.文章中使用目录功能</h3><p>根据你对应的设定，我的设置为1，所以需要有目录的文章中前面要加入toc: true字样。设置为2的可不加。<br>然后它会根据你markdown的设置标题的语法<br>类 Atx 形式则是在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶，例如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 这是 H1</span><br><span class="line"></span><br><span class="line">## 这是 H2</span><br><span class="line"></span><br><span class="line">###### 这是 H6</span><br></pre></td></tr></table></figure>
 <p>来自动识别每一阶的标题同时也对应着文章中的字体加粗变大</p>
@@ -265,7 +265,7 @@
 <h3 id="5-解决使用Aplayer播放器目录不能跳转的问题"><a href="#5-解决使用Aplayer播放器目录不能跳转的问题" class="headerlink" title="5.解决使用Aplayer播放器目录不能跳转的问题"></a>5.解决使用Aplayer播放器目录不能跳转的问题</h3><p>首先要感谢这位大佬解决了我的困扰<br>然后这里是他博客下的<a target="_blank" rel="noopener" href="https://blog.wangriyu.wang/2018/06-Aplayer.html">解决方案</a></p>
 <p>我简单说一下问题所在<br>就是Aplayer下的smoothscroll插件在处理跳转连接的hash时只对英文处理有效，而中文会转成Unicode码，无法处理，所以跳转就会失效。<br>解决办法：</p>
 <ul>
-<li>找到 Blog\themes\yilia\source\dist路径下的APlayer.min.js文件</li>
+<li>找到 <code>Blog\themes\yilia\source\dist</code>路径下的APlayer.min.js文件</li>
 <li>然后对其进行格式化，我用的sublime text3可以使用JsFormat插件或html/css/js prettify等<br>这里说点题外话：由于sublime text3官方的插件即package的安装源，国内基本访问不到，翻墙也经常会挂掉，所以推荐<a target="_blank" rel="noopener" href="https://github.com/HBLong/channel_v3_daily">换源安装</a>，可以把json文件存到本地然后channles替换成路径(这是最快的访问方式)，缺点是需要经常更新文件，还可以替换为他说的每天更新的源，缺点访问慢而且有可能会找不到。</li>
 <li>之后ctrl+f搜索defaultPrevented定位到要修改的地方</li>
 <li>然后替换成以下代码(decodeURIComponent处理)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!e.defaultPrevented) &#123;</span><br><span class="line">                            e.preventDefault(), <span class="built_in">decodeURIComponent</span>(location.hash) !== <span class="built_in">decodeURIComponent</span>(<span class="built_in">this</span>.hash) &amp;&amp; <span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, <span class="built_in">decodeURIComponent</span>(<span class="built_in">this</span>.hash));</span><br><span class="line">                            <span class="keyword">var</span> n = <span class="built_in">document</span>.getElementById(<span class="built_in">decodeURIComponent</span>(<span class="built_in">this</span>.hash).substring(<span class="number">1</span>));</span><br><span class="line">                            <span class="keyword">if</span> (!n) <span class="keyword">return</span>;</span><br><span class="line">                            t(n, <span class="number">500</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                                location.replace(<span class="string">&quot;#&quot;</span> + e.id)</span><br><span class="line">                            &#125;)</span><br><span class="line">                        &#125;</span><br></pre></td></tr></table></figure>
@@ -746,6 +746,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -758,15 +762,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">旧时光</a>
+                <a href="javascript:void(0)" class="js-tag color4">bs4</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">过渡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">bs4</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -833,7 +833,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">东尐，&lt;br&gt;哈理工在读本科生&lt;br&gt;&lt;br&gt;半吊子程序员&lt;br&gt;沙雕青年&lt;br&gt;&lt;br&gt;青灯为墙，旖旎为家&lt;br&gt;以梦为马，不负韶华</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">东尐，&lt;br&gt;过气程序员&lt;br&gt;沙雕青年&lt;br&gt;&lt;br&gt;青灯为墙，旖旎为家&lt;br&gt;&lt;br&gt;以梦为马，不负韶华&lt;br&gt;联系加V，lqd5216915</div>
   	  	
     	</section>
     

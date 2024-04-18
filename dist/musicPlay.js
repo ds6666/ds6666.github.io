@@ -25,7 +25,7 @@ const ap = new APlayer({
         {
             name: '红昭愿',
             artist: '音阙诗听',
-            url: 'https://music.163.com/song/media/outer/url?id=452986458.mp3',
+            url: 'https://lms-res.ouchn.cn/lms-media/outbound/60007018997.mp3',
             cover: 'https://p1.music.126.net/8ltR3o9R8uJ9_5Cc71cDhA==/109951162951242154.jpg',
             theme: '#46718b'
         },
