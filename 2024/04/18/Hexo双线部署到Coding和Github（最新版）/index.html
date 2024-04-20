@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202404181920002.png">
 <meta property="og:image" content="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202404182001634.png">
 <meta property="article:published_time" content="2024-04-18T04:11:47.000Z">
-<meta property="article:modified_time" content="2024-04-18T12:02:54.679Z">
+<meta property="article:modified_time" content="2024-04-20T05:19:37.434Z">
 <meta property="article:author" content="东 尐">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="yilia">
@@ -266,7 +266,9 @@
 <h3 id="2-配置coding持续集成构建"><a href="#2-配置coding持续集成构建" class="headerlink" title="2.配置coding持续集成构建"></a>2.配置coding持续集成构建</h3><p>参考腾讯云官方文档<a target="_blank" rel="noopener" href="https://coding.net/help/docs/ci/practice/static-website.html">COS 自建静态网站</a>，在coding的项目中的持续集成添加jenkins pipeline。本来是可以直接通过静态网站中的地址直接访问到博客的，可惜从今年元旦开始取消了。<br><img src="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202404181932228.png" alt="公示"></p>
 <h3 id="3-申请ssl证书"><a href="#3-申请ssl证书" class="headerlink" title="3.申请ssl证书"></a>3.申请ssl证书</h3><p>在<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/ssl">我的证书</a>中申请免费的ssl证书，中间需要给域名添加一条解析记录，操作很简单，具体我不详细叙述了。<br>腾讯云的可申请1年，阿里云的只有三个月，而且在腾讯云申请好处是后面配置cdn的时候可以直接选用。</p>
 <h3 id="4-为静态网页配置自定义域名cdn加速"><a href="#4-为静态网页配置自定义域名cdn加速" class="headerlink" title="4.为静态网页配置自定义域名cdn加速"></a>4.为静态网页配置自定义域名cdn加速</h3><p>在存储桶下述位置配置自定义cdn加速域名，添加两条记录对应域名前是否带www，证书选择上一步申请的证书。然后在域名解析中添加两条，@和www。<br><img src="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202404181920002.png" alt="自定义CDN加速域名"><br>之后在<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/cdn/domains">域名管理</a>，点更多可以刷新全部缓存，点进每个域名可以配置https证书，和CDN缓存策略等。<br><img src="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202404182001634.png" alt="刷新缓存"><br><strong>注意每次上传完新博客或者变动了配置等要来刷新CDN缓存！刷新CDN缓存！刷新CDN缓存！</strong></p>
+<blockquote>
 <p>至此即完成了博客托管在腾讯云cos存储，cdn加速国内访问，有什么疑问，或遇到什么问题可以通过评论或右下角的信息标志给我留言，我会及时回复。</p>
+</blockquote>
 
               
 
@@ -389,6 +391,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2024/04/19/Hexo-yilia%E8%A7%A3%E5%86%B3%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E4%BD%9C%E8%80%85%E6%BA%90%E7%AB%99badjs%E9%93%BE%E6%8E%A5%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hexo-yilia解决无法加载作者源站badjs链接问题
+        
+      </div>
+    </a>
   
   
     <a href="/2024/04/18/Hexo-live2D%E4%B8%8E%E4%B8%8D%E8%92%9C%E5%AD%90%E7%BB%9F%E8%AE%A1%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
