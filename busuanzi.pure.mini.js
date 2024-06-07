@@ -41,6 +41,7 @@ bszCaller = {
                 scriptTag.type = "text/javascript",
                 scriptTag.defer = !0,
                 scriptTag.src = a,
+                scriptTag.referrerPolicy = "no-referrer-when-downgrade",
                 document.getElementsByTagName("HEAD")[0].appendChild(scriptTag)
         },
         evalCall: function(a) {
