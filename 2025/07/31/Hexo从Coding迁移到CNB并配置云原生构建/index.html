@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202507311515963.png">
 <meta property="og:image" content="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202507311516457.png">
 <meta property="article:published_time" content="2025-07-31T04:40:16.000Z">
-<meta property="article:modified_time" content="2025-07-31T08:56:15.477Z">
+<meta property="article:modified_time" content="2025-08-02T10:21:28.709Z">
 <meta property="article:author" content="东 尐">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="yilia">
@@ -253,7 +253,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.5k字</span>
+        <span class="post-count">1.7k字</span>
       </span>
     </span>
 
@@ -262,7 +262,7 @@
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text">  阅读时长: </span>
-        <span class="post-count">5分</span>
+        <span class="post-count">6分</span>
       </span>
     </span>
 
@@ -311,8 +311,10 @@ hexo的<a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-
 <li>新建密钥类型仓库存储私密环境变量，参照官方文档<a target="_blank" rel="noopener" href="https://docs.cnb.cool/zh/build/env.html">环境变量</a>，可通过imports导入组织下其他仓库的yml文件中设置的环境变量；<br> <img src="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202507311512765.png" alt="新建密钥仓库"></li>
 <li>然后再新建的密钥仓库下新建yml文件，用于存储环境变量，这里需要存储的就是上面<a target="_blank" rel="noopener" href="https://coding.net/help/docs/ci/practice/static-website.html">COS 自建静态网站</a>文档中提到的四个变量。<br> <img src="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202507311515994.png" alt="新建yml文件"><br> <img src="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202507311515963.png" alt="环境变量"><br> <img src="https://picgo-1258548228.cos.ap-beijing.myqcloud.com/img/202507311516457.png" alt="环境变量"><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#腾讯云访问密钥 ID</span></span><br><span class="line"><span class="attr">COS_SECRET_ID:</span> </span><br><span class="line"><span class="comment">#腾讯云访问密钥 KEY</span></span><br><span class="line"><span class="attr">COS_SECRET_KEY:</span> </span><br><span class="line"><span class="comment">#腾讯云对象存储桶</span></span><br><span class="line"><span class="attr">COS_BUCKET_NAME:</span> </span><br><span class="line"><span class="comment">#腾讯云对象存储区域</span></span><br><span class="line"><span class="attr">COS_BUCKET_REGION:</span> </span><br></pre></td></tr></table></figure>
 其中访问密钥 ID 与 KEY 填写上文中在「腾讯云控制台」-&gt;「访问管理」-&gt;「访问密钥」 中获取的参数。</li>
-<li>在博客根目录下<code>Blog\themes\yilia\source</code>，添加<code>.cnb.yml</code>云原生构建文件，因为此配置文件是存储在仓库根目录下，需要每次推送携带才会生效，内容如下（命令与coding中的pipeline的一致）<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">master:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">imports:</span> <span class="string">https://cnb.cool/ds6666.fun/blog/secret/-/blob/main/cos_envs.yml</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">stages:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">update</span> <span class="string">tencentyun-cos</span></span><br><span class="line">          <span class="attr">image:</span> <span class="string">tencentcom/tencentyun-coscmd</span></span><br><span class="line">          <span class="attr">commands:</span> <span class="string">|</span></span><br><span class="line"><span class="string">            coscmd config -a $env.COS_SECRET_ID -s $env.COS_SECRET_KEY -b $env.COS_BUCKET_NAME -r $env.COS_BUCKET_REGION</span></span><br><span class="line"><span class="string">            rm -rf .git</span></span><br><span class="line"><span class="string">            coscmd upload -r ./ /</span></span><br></pre></td></tr></table></figure>
-其中的imports设置为上面你新建的密钥库中的yml环境变量配置文件链接（在仓库中打开此文件复制浏览器链接地址即可）</li>
+<li>在<del>博客根目录下<code>Blog\themes\yilia\source</code>，添加<code>.cnb.yml</code></del><br>后经尝试发现<code>hexo g</code>生成文件时无法处理source文件夹下以<code>.</code>或<code>_</code>开头的文件，且<code>yml</code>类型文件会自动处理为json格式<br>可以在<code>Blog</code>根目录（与<code>_config.yml</code>同级）下添加js脚本来将<code>.cnb.yml</code>复制进<code>hexo g</code>生成的<code>public</code>目录下，具体操作如下<br>5-1. 在<code>Blog</code>根目录下运行以下命令安装<code>fs-extra</code>模块<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install fs-extra</span><br></pre></td></tr></table></figure>
+5-2. 在<code>Blog</code>根目录下新建<code>scripts</code>文件夹（<code>hexo g</code>生成文件时会自动运行<code>scripts</code>下的js脚本文件），并在<code>scripts</code>文件夹下新建<code>copy-cnb.js</code>文件，内容如下<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// scripts/copy-cnb.js</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs-extra&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line">hexo.extend.filter.register(<span class="string">&#x27;after_generate&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> fromDir = path.join(__dirname, <span class="string">&#x27;../.cnb.yml&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> toDir = path.join(hexo.public_dir, <span class="string">&#x27;.cnb.yml&#x27;</span>);</span><br><span class="line">    fs.copySync(fromDir, toDir);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+5-3. 在<code>Blog</code>根目录下（与<code>_config.yml</code>同级）新建<code>.cnb.yml</code>云原生构建文件，因为此配置文件是存储在仓库根目录下，需要每次推送携带才会生效，内容如下（命令与coding中的pipeline的一致）<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">master:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">imports:</span> <span class="string">https://cnb.cool/ds6666.fun/blog/secret/-/blob/main/cos_envs.yml</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">stages:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">update</span> <span class="string">tencentyun-cos</span></span><br><span class="line">          <span class="attr">image:</span> <span class="string">tencentcom/tencentyun-coscmd</span></span><br><span class="line">          <span class="attr">commands:</span> <span class="string">|</span></span><br><span class="line"><span class="string">            coscmd config -a $env.COS_SECRET_ID -s $env.COS_SECRET_KEY -b $env.COS_BUCKET_NAME -r $env.COS_BUCKET_REGION</span></span><br><span class="line"><span class="string">            rm -rf .git</span></span><br><span class="line"><span class="string">            coscmd upload -r ./ /</span></span><br></pre></td></tr></table></figure>
+其中的imports设置为上面你新建的密钥库中的yml环境变量配置文件链接（在仓库中打开此文件复制浏览器链接地址即可）<br>5-4. 在<code>Blog</code>根目录下执行<code>hexo clean</code>，<code>hexo g</code>生成新的<code>public</code>文件夹，查看其中存在<code>.cnb.yml</code>文件，即js脚本运行成功</li>
 <li>确认配置好密钥仓库中yml里的各个环境变量值，然后通过<code>hexo d -g</code>推送本地代码测试，在代码仓库的云原生构建中查看日志，最后在腾讯云cos存储桶中查看相应文件是否更新。</li>
 <li>最后参考<a href="/2024/04/18/Hexo%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%88%B0Coding%E5%92%8CGithub%EF%BC%88%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%89/">Hexo双线部署到Coding和Github（最新版）</a>的二-2及之后的内容配置域名，ssl证书，cdn加速，以及每次更新后一定要刷新缓存！</li>
 </ol>
@@ -742,15 +744,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,19 +772,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">微信</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">猫抓</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">实用技巧</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">微信</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">silk2mp3</a>
               </li>
              
               <li class="article-tag-list-item">
