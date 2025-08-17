@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ds6666.fun/2024/04/16/Hexo-GitHub%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E6%96%B0%E5%9F%9F%E5%90%8D/</loc>
+    <loc>https://ds6666.fun/2025/08/16/Hexo%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AEsalesmartly%E5%9C%A8%E7%BA%BF%E8%81%94%E7%B3%BB/</loc>
     
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +13,25 @@
   <url>
     <loc>https://ds6666.fun/2025/07/31/Hexo%E4%BB%8ECoding%E8%BF%81%E7%A7%BB%E5%88%B0CNB%E5%B9%B6%E9%85%8D%E7%BD%AE%E4%BA%91%E5%8E%9F%E7%94%9F%E6%9E%84%E5%BB%BA/</loc>
     
-    <lastmod>2025-08-04</lastmod>
+    <lastmod>2025-08-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ds6666.fun/2019/06/28/hexo-%E6%B7%BB%E5%8A%A0live2d%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91%EF%BC%88%E6%9C%9B%E6%96%B0%E4%BA%BA%E6%B3%A8%E6%84%8F%EF%BC%89/</loc>
+    
+    <lastmod>2025-08-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://ds6666.fun/2024/04/16/Hexo-GitHub%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%8D%A2%E6%96%B0%E5%9F%9F%E5%90%8D/</loc>
+    
+    <lastmod>2025-08-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -174,15 +192,6 @@
   
   <url>
     <loc>https://ds6666.fun/2019/02/11/php%E8%BF%9E%E6%8E%A5oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE%E5%8F%8A%E6%93%8D%E4%BD%9C/</loc>
-    
-    <lastmod>2024-04-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://ds6666.fun/2019/06/28/hexo-%E6%B7%BB%E5%8A%A0live2d%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91%EF%BC%88%E6%9C%9B%E6%96%B0%E4%BA%BA%E6%B3%A8%E6%84%8F%EF%BC%89/</loc>
     
     <lastmod>2024-04-15</lastmod>
     
@@ -409,7 +418,7 @@
 
   <url>
     <loc>https://ds6666.fun/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -417,329 +426,336 @@
   
   <url>
     <loc>https://ds6666.fun/tags/hexo/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/yilia/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/CNB/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/root/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E6%89%8B%E6%9C%BA/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/HttpCanary/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E5%85%89%E9%80%9F%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E6%8A%93%E5%8C%85/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/IntelliJ-IDEA/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/MuMu%E6%A8%A1%E6%8B%9F%E5%99%A812/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/oracle/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/python/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/web/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/Django/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/selenium/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E8%84%9A%E6%9C%AC/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/Sublime-Text-3/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/xposed/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E5%A4%AA%E6%9E%81/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E6%89%8B%E6%B8%B8%E8%BE%85%E5%8A%A9/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E9%98%B2%E6%92%A4%E5%9B%9E/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E8%87%AA%E5%8A%A8%E6%8A%A2%E7%BA%A2%E5%8C%85/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E5%AE%9E%E7%94%A8%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/php/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/mysql/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E5%88%B7%E6%9C%BA/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/Python/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/C/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E7%8C%AB%E6%8A%93/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E5%BE%AE%E4%BF%A1/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/silk2mp3/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E8%A7%86%E9%A2%91/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/js/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E6%97%A7%E6%97%B6%E5%85%89/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/linux/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/Nginx/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/uWSGI/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/bs4/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/%E8%BF%87%E6%B8%A1/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/Semantic/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/Vue-js/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/API/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/tags/reqwest/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ds6666.fun/tags/salesmartly/</loc>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -748,21 +764,21 @@
   
   <url>
     <loc>https://ds6666.fun/categories/%E6%89%8B%E6%9C%BA%E7%A7%91%E6%8A%80/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/categories/%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://ds6666.fun/categories/%E8%84%9A%E6%9C%AC/</loc>
-    <lastmod>2025-08-05</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
